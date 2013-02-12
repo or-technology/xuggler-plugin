@@ -12,5 +12,20 @@ libs/slf4j-api.jar -text
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndPlayVideo.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/Gnome-audio-volume-high.svg -text
+src/de/or/xuggler/plugin/Gnome-audio-volume-low.svg -text
+src/de/or/xuggler/plugin/Gnome-audio-volume-medium.svg -text
+src/de/or/xuggler/plugin/Gnome-audio-volume-muted.svg -text
+src/de/or/xuggler/plugin/Gnome-camera-photo.svg -text
+src/de/or/xuggler/plugin/Gnome-media-playback-pause.svg -text
+src/de/or/xuggler/plugin/Gnome-media-playback-start.svg -text
+src/de/or/xuggler/plugin/Gnome-media-seek-backward.svg -text
+src/de/or/xuggler/plugin/Gnome-media-seek-forward.svg -text
+src/de/or/xuggler/plugin/ImageComponent.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/SoundPlayer.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/VideoPanel.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/VideoPlayer.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/XugglerContainer.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/XugglerPlayer.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/XugglerPlugin.java -text svneol=unset#text/plain
 src/dicomPACSXugglerVersion.properties -text svneol=unset#text/plain
