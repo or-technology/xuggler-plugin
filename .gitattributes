@@ -1,7 +1,13 @@
 * text=auto !eol
+/.classpath -text svneol=unset#text/plain
 /.project -text svneol=unset#text/plain
+.settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/plain
 /build.properties -text svneol=unset#text/plain
 /build.xml -text svneol=unset#text/plain
+libs/commons-cli.jar -text
+libs/logback-classic.jar -text
+libs/logback-core.jar -text
+libs/slf4j-api.jar -text
 /plugin.xml -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
