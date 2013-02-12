@@ -1,7 +1,7 @@
 <project name="dicomPACSXuggler" default="zip">
 
 	<property name="svn.user" value="orjenkins" />
-	<property name="svn.passwd" value="UID1.2.826.0.1.3680043.2.876.474.87.20110808155955.11UID" />
+	<property name="svn.passwd" value="ja/nein/vielleicht ?" />
 
 	<target name="compileEclipseWorkspace">
 		<javac srcdir="${basedir}\src" destdir="${basedir}\bin" classpath="${eclipse.workspace}\libs\head\*.*" debug="on" compiler="jikes" />
