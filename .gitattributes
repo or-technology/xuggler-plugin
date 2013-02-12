@@ -1,1 +1,10 @@
 * text=auto !eol
+/.project -text svneol=unset#text/plain
+/build.properties -text svneol=unset#text/plain
+/build.xml -text svneol=unset#text/plain
+/plugin.xml -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/DecodeAndPlayVideo.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/XugglerPlugin.java -text svneol=unset#text/plain
+src/dicomPACSXugglerVersion.properties -text svneol=unset#text/plain
