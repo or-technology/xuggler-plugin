@@ -48,6 +48,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.apache.log4j.Logger;
+
 public class XugglerPlayer extends JPanel {
 
     private static final int ICON_SIZE = 24;
@@ -316,10 +318,16 @@ public class XugglerPlayer extends JPanel {
                             }
                         });
                         volumeSlider.setModel(volumeModel);
-                        if (!isStopped)
-                            videoPlayer.startPlayback();
-                        videoPlayer.dispose();
-                        showVideo(filename);
+                        try
+                        {
+                            if (!isStopped)
+                                videoPlayer.startPlayback();
+                            videoPlayer.dispose();
+                            showVideo(filename);
+                        } catch (Exception ex)
+                        {
+                            Logger.getLogger(XugglerPlayer.class).warn("", ex);
+                        }
                     }
                 }).start();
             }

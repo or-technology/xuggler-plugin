@@ -164,18 +164,13 @@ public class VideoPlayer {
         screen.setImage(image);
     }
 
-    public void startPlayback()
+    public void startPlayback() throws Exception
     {
         if (!IVideoResampler.isSupported(IVideoResampler.Feature.FEATURE_COLORSPACECONVERSION))
-        {
-            throw new RuntimeException(
-                    "you must install the GPL version  of Xuggler (with IVideoResampler support) for this demo to work");
-        }
+            throw new RuntimeException("cannot decode video" + videoFilename);
 
         if (container.open(videoFilename, IContainer.Type.READ, null) < 0)
-        {
             throw new IllegalArgumentException("could not open file: " + videoFilename);
-        }
 
         timeModel.setString("" + convertTime(container.getDuration() / 1000000));
 
@@ -202,21 +197,15 @@ public class VideoPlayer {
         }
 
         if (videoStreamId == -1 && audioStreamId == -1)
-        {
             throw new RuntimeException("could not find audio or video stream in container: " + videoFilename);
-        }
 
         if (videoCoder.open() < 0)
-        {
             throw new RuntimeException("could not open video decoder for container: " + videoFilename);
-        }
 
         if (audioCoder != null)
         {
             if (audioCoder.open() < 0)
-            {
                 throw new RuntimeException("could not open audio decoder for container: " + videoFilename);
-            }
 
             try
             {
