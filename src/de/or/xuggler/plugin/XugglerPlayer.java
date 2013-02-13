@@ -19,6 +19,9 @@ package de.or.xuggler.plugin;
  * along with Xuggle-Xuggler-Main.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
+import de.or.utils.icons.JSVGIcon;
+import de.or.utils.logging.LoggingTools;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -44,9 +47,6 @@ import javax.swing.JToggleButton;
 import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import de.or.utils.icons.JSVGIcon;
-import de.or.utils.logging.LoggingTools;
 
 public class XugglerPlayer extends JPanel {
 
@@ -268,6 +268,14 @@ public class XugglerPlayer extends JPanel {
     }
 
     String videoFilename;
+
+    @Override
+    public void removeNotify()
+    {
+        super.removeNotify();
+        if (videoPlayer != null)
+            videoPlayer.dispose();
+    }
 
     public void showVideo(final String filename)
     {

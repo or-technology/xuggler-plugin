@@ -1,34 +1,28 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
-<plugin id="de.or.xuggler.plugin" version="0.0.1" class="de.or.xuggler.plugin.XugglerPlugin">
+<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin" version="1.0.-1">
 	<requires>
-		<import plugin-id="de.or.plugin.core" />
+		<import exported="false" match="compatible" optional="false" plugin-id="de.or.plugin.core" reverse-lookup="false"/>
 	</requires>
 	<runtime>
-		<library id="dicomPACSXuggler" path="classes/" type="code" />
-		<library id="commons-cli.jar" path="libs/commons-cli.jar" type="code" />
-		<library id="logback-classic.jar" path="libs/logback-classic.jar" type="code" />
-		<library id="logback-core.jar" path="libs/logback-core.jar" type="code" />
-		<library id="slf4j.jar" path="libs/slf4j-api.jar" type="code" />
-		<library type="resources" path="." id="nativelib" />
-		<library id="xuggle-xuggler-5.4.jar" path="libs/5.4/xuggle-xuggler-5.4.jar" type="code" />
-		<library id="xuggle-xuggler-noarch-5.4.jar" path="libs/5.4/xuggle-xuggler-noarch-5.4.jar" type="code" />
-		<library id="xuggle-xuggler-arch-i386-xuggle-darwin11.jar" path="libs/5.4/xuggle-xuggler-arch-i386-xuggle-darwin11.jar"
-			type="code" />
-		<library id="xuggle-xuggler-arch-i686-pc-linux-gnu.jar" path="libs/5.4/xuggle-xuggler-arch-i686-pc-linux-gnu.jar"
-			type="code" />
-		<library id="xuggle-xuggler-arch-i686-w64-mingw32.jar" path="libs/5.4/xuggle-xuggler-arch-i686-w64-mingw32.jar"
-			type="code" />
-		<library id="xuggle-xuggler-arch-x86_64-pc-linux-gnu.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-pc-linux-gnu.jar"
-			type="code" />
-		<library id="xuggle-xuggler-arch-x86_64-w64-mingw32.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-w64-mingw32.jar"
-			type="code" />
-		<library id="xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar"
-			type="code" />
+		<library id="dicomPACSXuggler" path="classes/" type="code"/>
+		<library id="commons-cli.jar" path="libs/commons-cli.jar" type="code"/>
+		<library id="logback-classic.jar" path="libs/logback-classic.jar" type="code"/>
+		<library id="logback-core.jar" path="libs/logback-core.jar" type="code"/>
+		<library id="slf4j.jar" path="libs/slf4j-api.jar" type="code"/>
+		<library id="nativelib" path="." type="resources"/>
+		<library id="xuggle-xuggler-5.4.jar" path="libs/5.4/xuggle-xuggler-5.4.jar" type="code"/>
+		<library id="xuggle-xuggler-noarch-5.4.jar" path="libs/5.4/xuggle-xuggler-noarch-5.4.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-i386-xuggle-darwin11.jar" path="libs/5.4/xuggle-xuggler-arch-i386-xuggle-darwin11.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-i686-pc-linux-gnu.jar" path="libs/5.4/xuggle-xuggler-arch-i686-pc-linux-gnu.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-i686-w64-mingw32.jar" path="libs/5.4/xuggle-xuggler-arch-i686-w64-mingw32.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-x86_64-pc-linux-gnu.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-pc-linux-gnu.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-x86_64-w64-mingw32.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-w64-mingw32.jar" type="code"/>
+		<library id="xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar" type="code"/>
 	</runtime>
-	<extension plugin-id="de.or.plugin.core" point-id="DisplayPlugin" id="xugglerPlugin">
-		<parameter id="class" value="de.or.xuggler.plugin.XugglerPlugin" />
-		<parameter id="name" value="Video player Tool" />
-		<parameter id="description" value="Plugin to play videos with Xuggler " />
+	<extension id="xugglerPlugin" plugin-id="de.or.plugin.core" point-id="DisplayPlugin">
+		<parameter id="class" value="de.or.xuggler.plugin.XugglerPlugin"/>
+		<parameter id="name" value="Video player Tool"/>
+		<parameter id="description" value="Plugin to play videos with Xuggler "/>
 	</extension>
 </plugin>

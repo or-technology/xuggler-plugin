@@ -286,52 +286,39 @@ public class VideoPlayer {
             IStream stream = container.getStream(i);
             IStreamCoder coder = stream.getStreamCoder();
 
-            LOGGER.info("stream    : " + i + 1);
-            LOGGER.info("type      : " + coder.getCodecType());
-            LOGGER.info("codec     : " + coder.getCodecID());
-            LOGGER.info("frames    : "
-                    + (stream.getDuration() == Global.NO_PTS ? "unknown" : "" + stream.getDuration()));
-            LOGGER.info("start time: "
-                    + (container.getStartTime() == Global.NO_PTS ? "unknown" : "" + stream.getStartTime()));
-            LOGGER.info("language  : " + (stream.getLanguage() == null ? "unknown" : stream.getLanguage()));
-            LOGGER.info("timebase  : " + stream.getTimeBase().getNumerator() + "/"
-                    + stream.getTimeBase().getDenominator());
-            LOGGER.info("coder tb  : " + coder.getTimeBase().getNumerator() + "/"
-                    + coder.getTimeBase().getDenominator());
+            LOGGER.info("stream    : " + (i + 1) + ", type      : " + coder.getCodecType() + ", codec     : "
+                    + coder.getCodecID() + ", frames    : "
+                    + (stream.getDuration() == Global.NO_PTS ? "unknown" : "" + stream.getDuration())
+                    + ", start time: "
+                    + (container.getStartTime() == Global.NO_PTS ? "unknown" : "" + stream.getStartTime())
+                    + ", language  : " + (stream.getLanguage() == null ? "unknown" : stream.getLanguage())
+                    + ", timebase  : " + stream.getTimeBase().getNumerator() + "/"
+                    + stream.getTimeBase().getDenominator() + ", coder tb  : "
+                    + coder.getTimeBase().getNumerator() + "/" + coder.getTimeBase().getDenominator());
 
             if (coder.getCodecType() == ICodec.Type.CODEC_TYPE_AUDIO)
             {
-                LOGGER.info("Audio sample rate: " + coder.getSampleRate());
-                LOGGER.info("Audio channels   : " + coder.getChannels());
-                LOGGER.info("Audio format     : " + coder.getSampleFormat());
+                LOGGER.info("Audio sample rate: " + coder.getSampleRate() + ", Audio channels   : "
+                        + coder.getChannels() + ", Audio format     : " + coder.getSampleFormat());
             } else if (coder.getCodecType() == ICodec.Type.CODEC_TYPE_VIDEO)
             {
-                LOGGER.info("Video width     : " + coder.getWidth());
-                LOGGER.info("Video height    : " + coder.getHeight());
-                LOGGER.info("Video format    : " + coder.getPixelType());
-                LOGGER.info("Video frame-rate: " + coder.getFrameRate().getDouble());
+                LOGGER.info("Video width     : " + coder.getWidth() + ", Video height    : "
+                        + coder.getHeight() + ", Video format    : " + coder.getPixelType()
+                        + ", Video frame-rate: " + coder.getFrameRate().getDouble());
             }
         }
-
-        LOGGER.info("CONTAINER INFO");
-
         LOGGER.info("Video duration (ms)    : "
-                + (container.getDuration() == Global.NO_PTS ? "unknown" : "" + container.getDuration() / 1000));
-        LOGGER.info("Video start time (ms)  : "
+                + (container.getDuration() == Global.NO_PTS ? "unknown" : "" + container.getDuration() / 1000)
+                + ", Video start time (ms)  : "
                 + (container.getStartTime() == Global.NO_PTS ? "unknown" : "" + container.getStartTime()
-                        / 1000));
-        LOGGER.info("Video file size (bytes): " + container.getFileSize());
-        LOGGER.info("Video bit rate         : " + container.getBitRate());
+                        / 1000) + ", Video file size (bytes): " + container.getFileSize()
+                + ", Video bit rate         : " + container.getBitRate());
 
-        LOGGER.info("VIDEO CODER INFO");
-
-        LOGGER.info("Video timebase  : " + videoCoder.getTimeBase());
-        LOGGER.info("Video tolerance : " + videoCoder.getBitRateTolerance());
-        LOGGER.info("Video channels  : " + videoCoder.getChannels());
-        LOGGER.info("Video codec     : " + videoCoder.getCodec().getName());
-        LOGGER.info("Video bitrate   : " + videoCoder.getBitRate());
-        LOGGER.info("Video samplerate: " + videoCoder.getSampleRate());
-        LOGGER.info("Video framerate : " + videoCoder.getFrameRate());
+        LOGGER.info("VIDEO CODER INFO: " + ", Video timebase  : " + videoCoder.getTimeBase()
+                + ", Video tolerance : " + videoCoder.getBitRateTolerance() + ", Video channels  : "
+                + videoCoder.getChannels() + ", Video codec     : " + videoCoder.getCodec().getName()
+                + ", Video bitrate   : " + videoCoder.getBitRate() + ", Video samplerate: "
+                + videoCoder.getSampleRate() + ", Video framerate : " + videoCoder.getFrameRate());
     }
 
     protected void handleVideoPacket(IVideoResampler resampler)

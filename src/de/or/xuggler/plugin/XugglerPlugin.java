@@ -1,5 +1,12 @@
 package de.or.xuggler.plugin;
 
+import de.or.dicom.dcm.codec.DcmDataObject;
+import de.or.plugin.PluginCentral;
+import de.or.plugin.core.DisplayPlugin;
+import de.or.plugin.images.DisplayComponentContainer;
+import de.or.plugin.registry.VideoPluginRegistry;
+import de.or.utils.Version;
+
 import java.io.InputStream;
 
 import org.apache.log4j.Logger;
@@ -7,14 +14,6 @@ import org.java.plugin.Plugin;
 import org.java.plugin.PluginClassLoader;
 
 import com.xuggle.xuggler.ICodec;
-import com.xuggle.xuggler.IPixelFormat;
-
-import de.or.dicom.dcm.codec.DcmDataObject;
-import de.or.plugin.PluginCentral;
-import de.or.plugin.core.DisplayPlugin;
-import de.or.plugin.images.DisplayComponentContainer;
-import de.or.plugin.registry.VideoPluginRegistry;
-import de.or.utils.Version;
 
 public class XugglerPlugin extends Plugin implements DisplayPlugin {
 
@@ -67,15 +66,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
         for (ICodec codec : ICodec.getInstalledCodecs())
         {
             if (codec.getType() == ICodec.Type.CODEC_TYPE_VIDEO)
-            {
-                LOGGER.info("codec: " + codec.getLongName() + " " + codec.canEncode() + " supports: ");
-                if (codec.getNumSupportedVideoFrameRates() > 0)
-                {
-                    for (IPixelFormat.Type type : codec.getSupportedVideoPixelFormats())
-                        LOGGER.info(type + " - ");
-                } else
-                    LOGGER.info("unspecified");
-            }
+                LOGGER.info("codec: " + codec.getLongName() + " supported" + codec.canDecode());
         }
     }
 
