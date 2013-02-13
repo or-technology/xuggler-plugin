@@ -276,7 +276,10 @@ public class XugglerPlayer extends JPanel {
     {
         super.removeNotify();
         if (videoPlayer != null)
+        {
+            videoPlayer.setStopped(true);
             videoPlayer.dispose();
+        }
     }
 
     public void showVideo(final String filename)
