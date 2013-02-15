@@ -57,7 +57,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
     protected void doStart() throws Exception
     {
         logInstalledCodes();
-        VideoPluginRegistry.getInstance().addPlugin(getDescriptor().getId(), this);
+        VideoPluginRegistry.getInstance().addPlugin(this);
     }
 
     protected static void logInstalledCodes()
@@ -73,7 +73,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
     @Override
     protected void doStop() throws Exception
     {
-        VideoPluginRegistry.getInstance().removePlugin(getDescriptor().getId());
+        VideoPluginRegistry.getInstance().removePlugin(this);
     }
 
     @Override

@@ -11,7 +11,6 @@ libs/slf4j-api.jar -text
 /plugin.xml -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
-src/de/or/xuggler/plugin/DecodeAndPlayVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/Gnome-audio-volume-high.svg -text
 src/de/or/xuggler/plugin/Gnome-audio-volume-low.svg -text
 src/de/or/xuggler/plugin/Gnome-audio-volume-medium.svg -text

@@ -13,31 +13,29 @@ public class ConvertVideo extends JPanel {
 
     public static void main(String[] args)
     {
-        if (args.length <= 0)
-        {
-            throw new RuntimeException("keine Datei angegeben");
-        }
-
-        String filename = args[0];
-        try
+        if (args.length == 2)
         {
 
-            // TODO Auto-generated method stub
+            String filename = args[0];
+            try
+            {
 
-            IMediaReader reader = ToolFactory.makeReader(filename);
-            reader.addListener(ToolFactory.makeWriter("convertVideo.flv", reader));
+                // TODO Auto-generated method stub
 
-            System.out.println("Video wird konvertiert");
+                IMediaReader reader = ToolFactory.makeReader(filename);
+                reader.addListener(ToolFactory.makeWriter(args[1], reader));
 
-            while (reader.readPacket() == null)
-                ;
+                System.out.println("Video wird konvertiert");
 
-        } catch (Exception e)
-        {
-            logger.warn("", e);
+                while (reader.readPacket() == null)
+                    ;
 
-        }
+            } catch (Exception e)
+            {
+                logger.warn("", e);
+            }
+        } else
+            System.err.println("need 2 parameters: source-video destination-file");
 
     }
-
 }
