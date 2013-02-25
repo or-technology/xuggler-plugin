@@ -3,21 +3,22 @@
  */
 package de.or.xuggler.plugin;
 
+import de.or.dicom.viewer.data.DisplayableUnit;
+import de.or.dicom.viewer.data.Instance;
+import de.or.dicom.viewer.dataBase.io.ArchiveData.FileType;
+import de.or.dicom.viewer.displaymodel.MatrixModel;
+import de.or.dicom.viewer.navigation.EmptyNavigator;
+import de.or.dicom.viewer.navigation.INavigator;
+import de.or.plugin.images.DisplayComponentContainer;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Cursor;
 
 import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
-
-import de.or.dicom.viewer.data.DisplayableUnit;
-import de.or.dicom.viewer.data.Instance;
-import de.or.dicom.viewer.dataBase.io.ArchiveData.FileType;
-import de.or.dicom.viewer.navigation.EmptyNavigator;
-import de.or.dicom.viewer.navigation.INavigator;
-import de.or.dicom.viewer.newRendering.displaymodel.MatrixModel;
-import de.or.plugin.images.DisplayComponentContainer;
 
 /**
  */
@@ -70,6 +71,10 @@ public class XugglerContainer extends JPanel implements DisplayComponentContaine
     public void setActive(boolean active)
     {
         // TODO Auto-generated method stub
-
     }
+
+    public void setToolCursor(Cursor cursor)
+    {// Do nothing, we dont show tool cursor on videos
+    }
+
 }
