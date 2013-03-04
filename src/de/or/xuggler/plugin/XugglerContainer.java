@@ -3,32 +3,30 @@
  */
 package de.or.xuggler.plugin;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+
+import org.apache.log4j.Logger;
+
 import de.or.dicom.viewer.data.DisplayableUnit;
 import de.or.dicom.viewer.data.Instance;
 import de.or.dicom.viewer.dataBase.io.ArchiveData.FileType;
 import de.or.dicom.viewer.displaymodel.MatrixModel;
 import de.or.dicom.viewer.navigation.EmptyNavigator;
 import de.or.dicom.viewer.navigation.INavigator;
-import de.or.plugin.images.DisplayComponentContainer;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-
-import javax.swing.JPanel;
-
-import org.apache.log4j.Logger;
+import de.or.plugin.images.AbstractDisplayComponentContainer;
 
 /**
  */
-public class XugglerContainer extends JPanel implements DisplayComponentContainer {
+public class XugglerContainer extends AbstractDisplayComponentContainer {
 
     XugglerPlayer player;
 
     public XugglerContainer()
     {
-        super(new BorderLayout());
+        super();
+        setLayout(new BorderLayout());
         setBackground(Color.BLACK);
     }
 
@@ -62,17 +60,6 @@ public class XugglerContainer extends JPanel implements DisplayComponentContaine
     }
 
     @Override
-    public Component getDisplayComponent()
-    {
-        return this;
-    }
-
-    @Override
-    public void setActive(boolean active)
-    {
-        // TODO Auto-generated method stub
-    }
-
     public void setToolCursor(Cursor cursor)
     {// Do nothing, we dont show tool cursor on videos
     }
