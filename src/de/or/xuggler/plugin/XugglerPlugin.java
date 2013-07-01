@@ -56,17 +56,18 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
     @Override
     protected void doStart() throws Exception
     {
-        logInstalledCodes();
+        if (LOGGER.isDebugEnabled())
+            logInstalledCodes();
         VideoPluginRegistry.getInstance().addPlugin(this);
     }
 
     protected static void logInstalledCodes()
     {
-        LOGGER.info("INSTALLED CODEC INFO");
+        LOGGER.debug("INSTALLED CODEC INFO");
         for (ICodec codec : ICodec.getInstalledCodecs())
         {
             if (codec.getType() == ICodec.Type.CODEC_TYPE_VIDEO)
-                LOGGER.info("codec: " + codec.getLongName() + " supported" + codec.canDecode());
+                LOGGER.debug("codec: " + codec.getLongName() + " supported" + codec.canDecode());
         }
     }
 
