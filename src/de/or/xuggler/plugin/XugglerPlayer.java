@@ -19,8 +19,17 @@ package de.or.xuggler.plugin;
  * along with Xuggle-Xuggler-Main.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-import de.or.utils.icons.JSVGIcon;
+import de.or.utils.icons.FlamingoSvgJavaIcon;
 import de.or.utils.logging.LoggingTools;
+import de.or.xuggler.plugin.icons.GnomeAudioVolumeHighIcon;
+import de.or.xuggler.plugin.icons.GnomeAudioVolumeLowIcon;
+import de.or.xuggler.plugin.icons.GnomeAudioVolumeMediumIcon;
+import de.or.xuggler.plugin.icons.GnomeAudioVolumeMutedIcon;
+import de.or.xuggler.plugin.icons.GnomeCameraPhotoIcon;
+import de.or.xuggler.plugin.icons.GnomeMediaPlaybackPauseIcon;
+import de.or.xuggler.plugin.icons.GnomeMediaPlaybackStartIcon;
+import de.or.xuggler.plugin.icons.GnomeMediaSeekBackwardIcon;
+import de.or.xuggler.plugin.icons.GnomeMediaSeekForwardIcon;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -248,13 +257,11 @@ public class XugglerPlayer extends JPanel {
             public void keyTyped(KeyEvent e)
             {
                 if (e.getKeyCode() == KeyEvent.VK_F3)
-                {
                     if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION)
                     {
                         String filename = fileChooser.getSelectedFile().getAbsolutePath();
                         player.showVideo(filename);
                     }
-                }
             }
         });
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -356,9 +363,8 @@ public class XugglerPlayer extends JPanel {
             return;
         videoPlayer.setPlaybackMultiplier(1);
         if (isStopped == true)
-        {
             playButton.setIcon(pauseIcon);
-        } else
+        else
         {
             videoPlayer.resetDelay();
             playButton.setIcon(playIcon);
@@ -373,32 +379,23 @@ public class XugglerPlayer extends JPanel {
 
     JSlider volumeSlider = new JSlider();
 
-    final JSVGIcon pauseIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-media-playback-pause.svg"));
+    final FlamingoSvgJavaIcon pauseIcon = new GnomeMediaPlaybackPauseIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon playIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-media-playback-start.svg"));
+    final FlamingoSvgJavaIcon playIcon = new GnomeMediaPlaybackStartIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon audioVolumeHighIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-audio-volume-high.svg"));
+    final FlamingoSvgJavaIcon audioVolumeHighIcon = new GnomeAudioVolumeHighIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon audioVolumeLowIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-audio-volume-low.svg"));
+    final FlamingoSvgJavaIcon audioVolumeLowIcon = new GnomeAudioVolumeLowIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon audioVolumeMediumIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-audio-volume-medium.svg"));
+    final FlamingoSvgJavaIcon audioVolumeMediumIcon = new GnomeAudioVolumeMediumIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon audioVolumeMutedIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-audio-volume-muted.svg"));
+    final FlamingoSvgJavaIcon audioVolumeMutedIcon = new GnomeAudioVolumeMutedIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon snapshotIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-camera-photo.svg"));
+    final FlamingoSvgJavaIcon snapshotIcon = new GnomeCameraPhotoIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon seekBackwardIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-media-seek-backward.svg"));
+    final FlamingoSvgJavaIcon seekBackwardIcon = new GnomeMediaSeekBackwardIcon(ICON_SIZE, ICON_SIZE);
 
-    final JSVGIcon seekForwardIcon = new JSVGIcon(ICON_SIZE, ICON_SIZE, getClass().getResourceAsStream(
-            "Gnome-media-seek-forward.svg"));
+    final FlamingoSvgJavaIcon seekForwardIcon = new GnomeMediaSeekForwardIcon(ICON_SIZE, ICON_SIZE);
 
     JToggleButton muteButton;
 
