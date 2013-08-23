@@ -1,9 +1,12 @@
 package de.or.xuggler.plugin;
 
 import de.or.dicom.dcm.codec.DcmDataObject;
+import de.or.dicom.viewer.tools.Tool;
 import de.or.plugin.PluginCentral;
 import de.or.plugin.core.DisplayPlugin;
+import de.or.plugin.core.ToolPlugin;
 import de.or.plugin.images.DisplayComponentContainer;
+import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
 
@@ -15,7 +18,7 @@ import org.java.plugin.PluginClassLoader;
 
 import com.xuggle.xuggler.ICodec;
 
-public class XugglerPlugin extends Plugin implements DisplayPlugin {
+public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
 
     public static final String PLUGIN_XUGGLER_VERSION_PROPERTIES = "dicomPACSXugglerVersion.properties";
 
@@ -59,22 +62,22 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
         if (LOGGER.isDebugEnabled())
             logInstalledCodes();
         VideoPluginRegistry.getInstance().addPlugin(this);
+        ToolPluginRegistry.getInstance().addPlugin(this);
     }
 
     protected static void logInstalledCodes()
     {
         LOGGER.debug("INSTALLED CODEC INFO");
         for (ICodec codec : ICodec.getInstalledCodecs())
-        {
             if (codec.getType() == ICodec.Type.CODEC_TYPE_VIDEO)
                 LOGGER.debug("codec: " + codec.getLongName() + " supported" + codec.canDecode());
-        }
     }
 
     @Override
     protected void doStop() throws Exception
     {
         VideoPluginRegistry.getInstance().removePlugin(this);
+        ToolPluginRegistry.getInstance().removePlugin(this);
     }
 
     @Override
@@ -98,6 +101,21 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin {
     public DisplayComponentContainer createDisplayComponentContainer()
     {
         return new XugglerContainer();
+    }
+
+    public String getToolGroupID()
+    {
+        return "1";
+    }
+
+    public String getToolMenuID()
+    {
+        return "Bildaufnahme/-ausgabe";
+    }
+
+    public Tool createTool()
+    {
+        return new ExportDicomLoop();
     }
 
 }
