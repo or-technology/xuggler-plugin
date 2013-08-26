@@ -85,7 +85,7 @@ public class ExportDicomLoop extends EnableTool {
     public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps,
             ProgressStatusBarModel progress)
     {
-        progress.setRangeProperties(0, 1, 0, frames.size() * 2, true);
+        progress.setRangeProperties(0, 1, 0, frames.size() * 2, false);
         logger.info("exporting " + frames.size() + " frames with " + fps + "fps encoded as " + codec + " to "
                 + file.getAbsolutePath());
         StandardImageEncoder sie = new StandardImageEncoder("Image encoder for video frames");
