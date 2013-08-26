@@ -3,6 +3,8 @@
  */
 package de.or.xuggler.plugin;
 
+import de.or.dicom.viewer.control.ProgressStatusBarModel;
+import de.or.dicom.viewer.control.ViewerFrameManager;
 import de.or.dicom.viewer.data.DisplayableUnit;
 import de.or.dicom.viewer.data.Instance;
 import de.or.dicom.viewer.displayable.DefaultSelectionModel;
@@ -49,7 +51,8 @@ public class ExportDicomLoop extends EnableTool {
 
     public boolean couldEnable()
     {
-        return ActiveDataManager.getActiveDisplayableUnit().size() > 1 || DefaultSelectionModel.getSelectionModel().size() > 1;
+        return ActiveDataManager.getActiveDisplayableUnit().size() > 1
+                || DefaultSelectionModel.getSelectionModel().size() > 1;
     }
 
     @Override
@@ -74,13 +77,17 @@ public class ExportDicomLoop extends EnableTool {
             for (int i = 0; i < childNo; i++)
                 frames.add(adu.getChild(i).getActiveFrame());
         }
-
-        exportFrames(frames, new File("DICOM-Video.mp4"), ICodec.ID.CODEC_ID_MPEG4, 25);
+        ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(getDescription().getIconSource());
+        exportFrames(frames, new File("DICOM-Video.mp4"), ICodec.ID.CODEC_ID_MPEG4, 25, progress);
+        ViewerFrameManager.removeProgressBars(progress);
     }
 
-    public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps)
+    public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps,
+            ProgressStatusBarModel progress)
     {
-        logger.info("exporting " + frames.size() + " frames with " + fps + "fps encoded as " + codec + " to " + file.getAbsolutePath());
+        progress.setRangeProperties(0, 1, 0, frames.size() * 2, true);
+        logger.info("exporting " + frames.size() + " frames with " + fps + "fps encoded as " + codec + " to "
+                + file.getAbsolutePath());
         StandardImageEncoder sie = new StandardImageEncoder("Image encoder for video frames");
         int width = 0;
         int height = 0;
@@ -89,6 +96,7 @@ public class ExportDicomLoop extends EnableTool {
             Dimension is = ild.getImageSize();
             width = Math.max(width, is.width);
             height = Math.max(height, is.height);
+            progress.setValue(progress.getValue() + 1);
         }
         final IMediaWriter writer = ToolFactory.makeWriter(file.getAbsolutePath());
         int index = writer.addVideoStream(0, 0, codec, width, height);
@@ -99,6 +107,7 @@ public class ExportDicomLoop extends EnableTool {
             sie.setData(ild);
             writer.encodeVideo(index, sie.createWholeImage(), nextFrameTime, TimeUnit.MILLISECONDS);
             nextFrameTime += frameRate;
+            progress.setValue(progress.getValue() + 1);
         }
         writer.flush();
         writer.close();
