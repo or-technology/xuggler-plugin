@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+
 import com.xuggle.mediatool.IMediaWriter;
 import com.xuggle.mediatool.ToolFactory;
 import com.xuggle.xuggler.ICodec;
@@ -30,6 +32,8 @@ import com.xuggle.xuggler.ICodec.ID;
  * 
  */
 public class ExportDicomLoop extends EnableTool {
+
+    protected static final Logger logger = Logger.getLogger(ExportDicomLoop.class);
 
     public ExportDicomLoop()
     {
@@ -45,8 +49,7 @@ public class ExportDicomLoop extends EnableTool {
 
     public boolean couldEnable()
     {
-        return ActiveDataManager.getActiveDisplayableUnit().size() > 1
-                || DefaultSelectionModel.getSelectionModel().size() > 1;
+        return ActiveDataManager.getActiveDisplayableUnit().size() > 1 || DefaultSelectionModel.getSelectionModel().size() > 1;
     }
 
     @Override
@@ -77,6 +80,7 @@ public class ExportDicomLoop extends EnableTool {
 
     public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps)
     {
+        logger.info("exporting " + frames.size() + " frames with " + fps + "fps encoded as " + codec + " to " + file.getAbsolutePath());
         StandardImageEncoder sie = new StandardImageEncoder("Image encoder for video frames");
         int width = 0;
         int height = 0;
@@ -89,7 +93,7 @@ public class ExportDicomLoop extends EnableTool {
         final IMediaWriter writer = ToolFactory.makeWriter(file.getAbsolutePath());
         int index = writer.addVideoStream(0, 0, codec, width, height);
         long nextFrameTime = 0;
-        final long frameRate = fps / 1000;
+        final long frameRate = fps;
         for (ImageLayeredData ild : frames)
         {
             sie.setData(ild);
@@ -98,5 +102,6 @@ public class ExportDicomLoop extends EnableTool {
         }
         writer.flush();
         writer.close();
+        logger.info("export finished: " + file.getAbsolutePath());
     }
 }
