@@ -51,8 +51,8 @@ public class ExportDicomLoop extends EnableTool {
 
     public boolean couldEnable()
     {
-        return ActiveDataManager.getActiveDisplayableUnit().size() > 1
-                || DefaultSelectionModel.getSelectionModel().size() > 1;
+        DisplayableUnit adu = ActiveDataManager.getActiveDisplayableUnit();
+        return adu != null && adu.size() > 1 || DefaultSelectionModel.getSelectionModel().size() > 1;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class ExportDicomLoop extends EnableTool {
         // * Selektion
         // * Format: MP4?
 
-        List<ImageLayeredData> frames = new Vector<>();
+        final List<ImageLayeredData> frames = new Vector<>();
         DefaultSelectionModel sm = DefaultSelectionModel.getSelectionModel();
         if (sm.size() > 1)
             for (Instance instance : sm)
@@ -77,9 +77,15 @@ public class ExportDicomLoop extends EnableTool {
             for (int i = 0; i < childNo; i++)
                 frames.add(adu.getChild(i).getActiveFrame());
         }
-        ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(getDescription().getIconSource());
-        exportFrames(frames, new File("DICOM-Video.mp4"), ICodec.ID.CODEC_ID_MPEG4, 25, progress);
-        ViewerFrameManager.removeProgressBars(progress);
+        new Thread(new Runnable() {
+
+            public void run()
+            {
+                final ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(getDescription().getIconSource());
+                exportFrames(frames, new File("DICOM-Video.mp4"), ICodec.ID.CODEC_ID_MPEG4, 25, progress);
+                ViewerFrameManager.removeProgressBars(progress);
+            }
+        }).start();
     }
 
     public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps,
