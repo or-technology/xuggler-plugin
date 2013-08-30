@@ -9,6 +9,7 @@ import de.or.plugin.images.DisplayComponentContainer;
 import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
+import de.or.xuggler.plugin.tools.ExportDicomLoop;
 
 import java.io.InputStream;
 

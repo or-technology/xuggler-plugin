@@ -11,7 +11,6 @@ libs/slf4j-api.jar -text
 /plugin.xml -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
-src/de/or/xuggler/plugin/ExportDicomLoop.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ImageComponent.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/SoundPlayer.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/VideoPanel.java -text svneol=unset#text/plain
@@ -37,4 +36,9 @@ src/de/or/xuggler/plugin/icons/GnomeMediaPlaybackPauseIcon.java -text svneol=uns
 src/de/or/xuggler/plugin/icons/GnomeMediaPlaybackStartIcon.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/icons/GnomeMediaSeekBackwardIcon.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/icons/GnomeMediaSeekForwardIcon.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/icons/UbuntuStudio-Icons-Video_Production.svg -text
+src/de/or/xuggler/plugin/icons/UbuntuStudioIconsVideoProductionIcon.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/tools/ExportDicomLoop.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/tools/ExportDicomLoopDialog.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/tools/ExportVideoFormat.java -text svneol=unset#text/plain
 src/dicomPACSXugglerVersion.properties -text svneol=unset#text/plain

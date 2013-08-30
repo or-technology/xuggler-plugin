@@ -1,39 +1,47 @@
 /**
  * 
  */
-package de.or.xuggler.plugin;
+package de.or.xuggler.plugin.tools;
 
 import de.or.dicom.viewer.control.ProgressStatusBarModel;
 import de.or.dicom.viewer.control.ViewerFrameManager;
 import de.or.dicom.viewer.data.DisplayableUnit;
 import de.or.dicom.viewer.data.Instance;
+import de.or.dicom.viewer.dialog.OnTopDialog;
+import de.or.dicom.viewer.dialog.TargetPanel;
 import de.or.dicom.viewer.displayable.DefaultSelectionModel;
 import de.or.dicom.viewer.displayable.ImageLayeredData;
 import de.or.dicom.viewer.displaymodel.ActiveDataManager;
+import de.or.dicom.viewer.displaymodel.DisplayListModel;
 import de.or.dicom.viewer.event.ExecuteEvent;
 import de.or.dicom.viewer.image.StandardImageEncoder;
-import de.or.dicom.viewer.tools.EnableTool;
+import de.or.dicom.viewer.tasks.ExportTask;
 import de.or.dicom.viewer.tools.ToolDescription;
+import de.or.dicom.viewer.tools.inout.AbstractExportTool;
 import de.or.utils.config.LocalesConfig;
+import de.or.xuggler.plugin.icons.UbuntuStudioIconsVideoProductionIcon;
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JFrame;
+
 import org.apache.log4j.Logger;
 
 import com.xuggle.mediatool.IMediaWriter;
 import com.xuggle.mediatool.ToolFactory;
-import com.xuggle.xuggler.ICodec;
 import com.xuggle.xuggler.ICodec.ID;
 
 /**
  * @author Till
  * 
  */
-public class ExportDicomLoop extends EnableTool {
+public class ExportDicomLoop extends AbstractExportTool {
 
     protected static final Logger logger = Logger.getLogger(ExportDicomLoop.class);
 
@@ -45,7 +53,7 @@ public class ExportDicomLoop extends EnableTool {
         String desc = "Export images as movie";
         desc = LocalesConfig.getString(description.getId() + ".Description", desc);
         description.setDescription(desc);
-        description.setIconSource(svg.inout.FromClipboardIcon.class.getName());
+        description.setIconSource(UbuntuStudioIconsVideoProductionIcon.class.getName());
         register();
     }
 
@@ -59,30 +67,31 @@ public class ExportDicomLoop extends EnableTool {
     public void execute(ExecuteEvent e)
     {
         super.execute(e);
-        // TODO Dialog erfragt
-        // * frames/second
-        // * Exportziel
-        // * Selektion
-        // * Format: MP4?
+        JFrame currentFrame = ViewerFrameManager.getCurrentFrame();
+        final ExportDicomLoopDialog dialog = new ExportDicomLoopDialog(currentFrame, new ExportTask(), this);
+        dialog.setLocationRelativeTo(currentFrame);
+        dialog.setVisible(true);
 
-        final List<ImageLayeredData> frames = new Vector<>();
-        DefaultSelectionModel sm = DefaultSelectionModel.getSelectionModel();
-        if (sm.size() > 1)
-            for (Instance instance : sm)
-                frames.add(instance.getActiveFrame());
-        else
+        if (dialog.getActionCommand().equals(OnTopDialog.CANCEL))
         {
-            DisplayableUnit adu = ActiveDataManager.getActiveDisplayableUnit();
-            int childNo = adu.getChildNo();
-            for (int i = 0; i < childNo; i++)
-                frames.add(adu.getChild(i).getActiveFrame());
+            logger.info("export dicom loop canceled");
+            return;
         }
+        final List<ImageLayeredData> frames = new Vector<>();
+        DisplayListModel<Instance> si = dialog.getSelectedImages();
+        for (Instance instance : si)
+            for (ImageLayeredData ild : instance.getFrames())
+                frames.add(ild);
         new Thread(new Runnable() {
 
             public void run()
             {
-                final ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(getDescription().getIconSource());
-                exportFrames(frames, new File("DICOM-Video.mp4"), ICodec.ID.CODEC_ID_MPEG4, 25, progress);
+                String iconSource = getDescription().getIconSource();
+                final ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(iconSource);
+                ExportVideoFormat format = dialog.getSelectedCodec();
+
+                exportFrames(frames, new File("DICOM-Video." + format.fileExtension), format.codec.getID(),
+                        dialog.getSelectedFrameRate(), progress);
                 ViewerFrameManager.removeProgressBars(progress);
             }
         }).start();
@@ -118,5 +127,23 @@ public class ExportDicomLoop extends EnableTool {
         writer.flush();
         writer.close();
         logger.info("export finished: " + file.getAbsolutePath());
+    }
+
+    @Override
+    public ActionListener createConfigActionListener(final TargetPanel targetPanel, final OnTopDialog dialog)
+    {
+        return new ActionListener() {
+
+            public void actionPerformed(ActionEvent e)
+            {
+                // ToolConfig exportToolConfig = ExportConfig.getInstance(ExportTool.this);
+                // ConfigDialog configDialog = new ConfigDialog(dialog, exportToolConfig);
+                // configDialog.setVisible(true);
+
+                // wird der Dialog beendet, wird entweder der RadioButton für die automatische oder manuelle
+                // Dateinamensbildung angehakt und das Textfeld entsprechend aktualisiert
+                targetPanel.setFileNameGeneration();
+            }
+        };
     }
 }
