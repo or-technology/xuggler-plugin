@@ -20,6 +20,7 @@ package de.or.xuggler.plugin;
  *******************************************************************************/
 
 import de.or.utils.icons.FlamingoSvgJavaIcon;
+import de.or.utils.icons.IconRegistry;
 import de.or.utils.logging.LoggingTools;
 import de.or.xuggler.plugin.icons.GnomeAudioVolumeHighIcon;
 import de.or.xuggler.plugin.icons.GnomeAudioVolumeLowIcon;
@@ -46,6 +47,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultBoundedRangeModel;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -379,7 +381,8 @@ public class XugglerPlayer extends JPanel {
 
     JSlider volumeSlider = new JSlider();
 
-    final FlamingoSvgJavaIcon pauseIcon = new GnomeMediaPlaybackPauseIcon(ICON_SIZE, ICON_SIZE);
+    final Icon pauseIcon = IconRegistry.getIcon(GnomeMediaPlaybackPauseIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
     final FlamingoSvgJavaIcon playIcon = new GnomeMediaPlaybackStartIcon(ICON_SIZE, ICON_SIZE);
 

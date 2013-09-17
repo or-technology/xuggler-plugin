@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
-<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin" version="1.0.801">
+<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin" version="1.0.802">
 	<requires>
 		<import exported="false" match="compatible" optional="false" plugin-id="de.or.plugin.core" reverse-lookup="false"/>
 	</requires>
