@@ -216,7 +216,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigWidth()
     {
-        return 26;
+        return 32;
     }
 
     /**
@@ -226,7 +226,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigHeight()
     {
-        return 31;
+        return 32;
     }
 
     public GnomeMediaPlaybackStartIcon()
