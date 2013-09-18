@@ -19,7 +19,6 @@ package de.or.xuggler.plugin;
  * along with Xuggle-Xuggler-Main.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-import de.or.utils.icons.FlamingoSvgJavaIcon;
 import de.or.utils.icons.IconRegistry;
 import de.or.utils.logging.LoggingTools;
 import de.or.xuggler.plugin.icons.GnomeAudioVolumeHighIcon;
@@ -384,21 +383,29 @@ public class XugglerPlayer extends JPanel {
     final Icon pauseIcon = IconRegistry.getIcon(GnomeMediaPlaybackPauseIcon.class.getName(), ICON_SIZE,
             getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon playIcon = new GnomeMediaPlaybackStartIcon(ICON_SIZE, ICON_SIZE);
+    final Icon playIcon = IconRegistry.getIcon(GnomeMediaPlaybackStartIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon audioVolumeHighIcon = new GnomeAudioVolumeHighIcon(ICON_SIZE, ICON_SIZE);
+    final Icon audioVolumeHighIcon = IconRegistry.getIcon(GnomeAudioVolumeHighIcon.class.getName(),
+            ICON_SIZE, getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon audioVolumeLowIcon = new GnomeAudioVolumeLowIcon(ICON_SIZE, ICON_SIZE);
+    final Icon audioVolumeLowIcon = IconRegistry.getIcon(GnomeAudioVolumeLowIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon audioVolumeMediumIcon = new GnomeAudioVolumeMediumIcon(ICON_SIZE, ICON_SIZE);
+    final Icon audioVolumeMediumIcon = IconRegistry.getIcon(GnomeAudioVolumeMediumIcon.class.getName(),
+            ICON_SIZE, getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon audioVolumeMutedIcon = new GnomeAudioVolumeMutedIcon(ICON_SIZE, ICON_SIZE);
+    final Icon audioVolumeMutedIcon = IconRegistry.getIcon(GnomeAudioVolumeMutedIcon.class.getName(),
+            ICON_SIZE, getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon snapshotIcon = new GnomeCameraPhotoIcon(ICON_SIZE, ICON_SIZE);
+    final Icon snapshotIcon = IconRegistry.getIcon(GnomeCameraPhotoIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon seekBackwardIcon = new GnomeMediaSeekBackwardIcon(ICON_SIZE, ICON_SIZE);
+    final Icon seekBackwardIcon = IconRegistry.getIcon(GnomeMediaSeekBackwardIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
-    final FlamingoSvgJavaIcon seekForwardIcon = new GnomeMediaSeekForwardIcon(ICON_SIZE, ICON_SIZE);
+    final Icon seekForwardIcon = IconRegistry.getIcon(GnomeMediaSeekForwardIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
     JToggleButton muteButton;
 
