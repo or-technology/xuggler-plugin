@@ -165,7 +165,8 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0_0
         AffineTransform trans_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, -0.9837367534637451f, 0.010467230342328548f));
+        g.transform(new AffineTransform(0.8338465094566345f, 0.0f, 0.0f, 0.8338465094566345f,
+                -4.8326005935668945f, 11.996413230895996f));
         paintCompositeGraphicsNode_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0);
     }
@@ -174,7 +175,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0
         AffineTransform trans_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, -16.0f));
         paintCompositeGraphicsNode_0_0_0(g);
         g.setTransform(trans_0_0_0);
     }
@@ -196,7 +197,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigX()
     {
-        return 12;
+        return 6;
     }
 
     /**
@@ -206,7 +207,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigY()
     {
-        return 9;
+        return 4;
     }
 
     /**
@@ -216,7 +217,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigWidth()
     {
-        return 32;
+        return 22;
     }
 
     /**
@@ -226,9 +227,12 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigHeight()
     {
-        return 32;
+        return 26;
     }
 
+    /**
+     * Creates a new transcoded SVG image.
+     */
     public GnomeMediaPlaybackStartIcon()
     {
         this.width = getOrigWidth();
@@ -241,17 +245,31 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
         this.height = height;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.swing.Icon#getIconHeight()
+     */
     @Override
     public int getIconHeight()
     {
         return height;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.swing.Icon#getIconWidth()
+     */
     @Override
     public int getIconWidth()
     {
         return width;
     }
+
+    /*
+     * Set the dimension of the icon.
+     */
 
     public void setDimension(Dimension newDimension)
     {
