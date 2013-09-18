@@ -17,8 +17,6 @@ import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.RoundRectangle2D;
 
 /**
  * This class has been automatically generated using svg2java
@@ -59,46 +57,55 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     private void paintShapeNode_0_0_0_0_0(Graphics2D g)
     {
         GeneralPath shape0 = new GeneralPath();
-        shape0.moveTo(-37.03125, 11.03125);
-        shape0.curveTo(-38.047935, 11.03125, -38.96875, 11.9520645, -38.96875, 12.96875);
-        shape0.lineTo(-38.96875, 35.03125);
-        shape0.curveTo(-38.96875, 36.04794, -38.04795, 36.968758, -37.03125, 36.96875);
-        shape0.lineTo(-29.96875, 36.96875);
-        shape0.curveTo(-28.952068, 36.96875, -28.031246, 36.04794, -28.03125, 35.03125);
-        shape0.lineTo(-28.03125, 12.96875);
-        shape0.curveTo(-28.03125, 11.9520645, -28.952065, 11.03125, -29.96875, 11.03125);
-        shape0.lineTo(-37.03125, 11.03125);
+        shape0.moveTo(-2.9939585, -7.3132057);
+        shape0.curveTo(-4.0106435, -7.3132057, -4.9314585, -6.3923907, -4.9314585, -5.3757057);
+        shape0.lineTo(-4.9314585, 16.686794);
+        shape0.curveTo(-4.9314585, 17.703484, -4.0106583, 18.624302, -2.9939585, 18.624294);
+        shape0.lineTo(4.0685415, 18.624294);
+        shape0.curveTo(5.0852237, 18.624294, 6.0060453, 17.703484, 6.0060415, 16.686794);
+        shape0.lineTo(6.0060415, -5.3757057);
+        shape0.curveTo(6.0060415, -6.3923907, 5.0852265, -7.3132057, 4.0685415, -7.3132057);
+        shape0.lineTo(-2.9939585, -7.3132057);
         shape0.closePath();
-        shape0.moveTo(-22.03125, 11.03125);
-        shape0.curveTo(-23.047935, 11.03125, -23.96875, 11.9520645, -23.96875, 12.96875);
-        shape0.lineTo(-23.96875, 35.03125);
-        shape0.curveTo(-23.96875, 36.04794, -23.04795, 36.968758, -22.03125, 36.96875);
-        shape0.lineTo(-14.96875, 36.96875);
-        shape0.curveTo(-13.952068, 36.96875, -13.03125, 36.047935, -13.03125, 35.03125);
-        shape0.lineTo(-13.03125, 12.96875);
-        shape0.curveTo(-13.03125, 11.9520645, -13.9520645, 11.03125, -14.96875, 11.03125);
-        shape0.lineTo(-22.03125, 11.03125);
+        shape0.moveTo(12.0060425, -7.3132057);
+        shape0.curveTo(10.989357, -7.3132057, 10.0685425, -6.3923907, 10.0685425, -5.3757057);
+        shape0.lineTo(10.0685425, 16.686794);
+        shape0.curveTo(10.0685425, 17.703484, 10.989343, 18.624302, 12.0060425, 18.624294);
+        shape0.lineTo(19.068542, 18.624294);
+        shape0.curveTo(20.085224, 18.624294, 21.006042, 17.703478, 21.006042, 16.686794);
+        shape0.lineTo(21.006042, -5.3757057);
+        shape0.curveTo(21.006042, -6.3923907, 20.085228, -7.3132057, 19.068542, -7.3132057);
+        shape0.lineTo(12.0060425, -7.3132057);
         shape0.closePath();
         g.setPaint(new LinearGradientPaint(new Point2D.Double(-27.66901206970215, 13.129915237426758),
                 new Point2D.Double(-24.33098793029785, 25.587594985961914), new float[] {
                     0.0f, 1.0f }, new Color[] {
                     new Color(0, 0, 0, 80), new Color(255, 255, 255, 255) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
-                new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f)));
+                new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 34.03729248046875f, -18.34445571899414f)));
         g.fill(shape0);
     }
 
     private void paintShapeNode_0_0_0_0_1(Graphics2D g)
     {
-        RoundRectangle2D.Double shape1 = new RoundRectangle2D.Double(4.91566276550293, 20.91566276550293,
-                7.70892858505249, 22.168676376342773, 0.919485330581665, 0.919485330581665);
+        GeneralPath shape1 = new GeneralPath();
+        shape1.moveTo(-2.587303, -5.428793);
+        shape1.lineTo(4.202141, -5.428793);
+        shape1.curveTo(4.4568377, -5.428793, 4.661883, -5.2237477, 4.661883, -4.969051);
+        shape1.lineTo(4.661883, 16.28014);
+        shape1.curveTo(4.661883, 16.534838, 4.4568377, 16.739883, 4.202141, 16.739883);
+        shape1.lineTo(-2.5873027, 16.739883);
+        shape1.curveTo(-2.842, 16.739883, -3.0470452, 16.534838, -3.0470452, 16.28014);
+        shape1.lineTo(-3.0470452, -4.9690514);
+        shape1.curveTo(-3.0470452, -5.223748, -2.842, -5.4287934, -2.5873027, -5.4287934);
+        shape1.closePath();
         g.setPaint(new RadialGradientPaint(new Point2D.Double(28.541149139404297, 31.67877197265625),
                 12.000001f, new Point2D.Double(28.541149139404297, 31.67877197265625), new float[] {
                     0.0f, 1.0f }, new Color[] {
                     new Color(238, 238, 236, 255), new Color(146, 148, 143, 255) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
                 new AffineTransform(5.204353332519531f, 0.0f, 0.0f, 2.2201759815216064f,
-                        -128.72030639648438f, -31.471752166748047f)));
+                        -136.68301391601562f, -57.81620788574219f)));
         g.fill(shape1);
         g.setPaint(new Color(85, 87, 83, 255));
         g.setStroke(new BasicStroke(0.96385545f, 1, 1, 4.0f, null, 0.0f));
@@ -107,15 +114,24 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
 
     private void paintShapeNode_0_0_0_0_2(Graphics2D g)
     {
-        RoundRectangle2D.Double shape2 = new RoundRectangle2D.Double(19.373493194580078, 20.91566276550293,
-                7.70892858505249, 22.168676376342773, 0.919485330581665, 0.919485330581665);
+        GeneralPath shape2 = new GeneralPath();
+        shape2.moveTo(11.870528, -5.428793);
+        shape2.lineTo(18.659971, -5.428793);
+        shape2.curveTo(18.914669, -5.428793, 19.119715, -5.2237477, 19.119715, -4.969051);
+        shape2.lineTo(19.119715, 16.28014);
+        shape2.curveTo(19.119715, 16.534838, 18.914669, 16.739883, 18.659971, 16.739883);
+        shape2.lineTo(11.870528, 16.739883);
+        shape2.curveTo(11.61583, 16.739883, 11.410786, 16.534838, 11.410786, 16.28014);
+        shape2.lineTo(11.410786, -4.9690514);
+        shape2.curveTo(11.410786, -5.223748, 11.61583, -5.4287934, 11.870528, -5.4287934);
+        shape2.closePath();
         g.setPaint(new RadialGradientPaint(new Point2D.Double(28.541149139404297, 31.67877197265625),
                 12.000001f, new Point2D.Double(28.541149139404297, 31.67877197265625), new float[] {
                     0.0f, 1.0f }, new Color[] {
                     new Color(238, 238, 236, 255), new Color(146, 148, 143, 255) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
                 new AffineTransform(5.204353332519531f, 0.0f, 0.0f, 2.2201759815216064f,
-                        -128.72030639648438f, -31.471752166748047f)));
+                        -136.68301391601562f, -57.81620788574219f)));
         g.fill(shape2);
         g.setPaint(new Color(85, 87, 83, 255));
         g.draw(shape2);
@@ -123,8 +139,12 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
 
     private void paintShapeNode_0_0_0_0_3(Graphics2D g)
     {
-        Rectangle2D.Double shape3 = new Rectangle2D.Double(5.879518032073975, 21.879520416259766,
-                5.783103942871094, 20.2409610748291);
+        GeneralPath shape3 = new GeneralPath();
+        shape3.moveTo(-2.0831904, -4.464936);
+        shape3.lineTo(3.6999135, -4.464936);
+        shape3.lineTo(3.6999135, 15.776026);
+        shape3.lineTo(-2.0831904, 15.776026);
+        shape3.closePath();
         g.setPaint(new Color(255, 255, 255, 255));
         g.setStroke(new BasicStroke(0.9638553f, 1, 0, 4.0f, null, 0.0f));
         g.draw(shape3);
@@ -132,25 +152,29 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
 
     private void paintShapeNode_0_0_0_0_4(Graphics2D g)
     {
-        Rectangle2D.Double shape4 = new Rectangle2D.Double(20.33734893798828, 21.879520416259766,
-                5.783103942871094, 20.2409610748291);
+        GeneralPath shape4 = new GeneralPath();
+        shape4.moveTo(12.374641, -4.464936);
+        shape4.lineTo(18.157745, -4.464936);
+        shape4.lineTo(18.157745, 15.776026);
+        shape4.lineTo(12.374641, 15.776026);
+        shape4.closePath();
         g.draw(shape4);
     }
 
     private void paintShapeNode_0_0_0_0_5(Graphics2D g)
     {
         GeneralPath shape5 = new GeneralPath();
-        shape5.moveTo(13.0, 13.0);
-        shape5.lineTo(13.0, 35.0);
-        shape5.lineTo(20.0, 35.0);
-        shape5.lineTo(20.0, 13.0);
-        shape5.lineTo(13.0, 13.0);
+        shape5.moveTo(-2.9627085, 16.655544);
+        shape5.lineTo(-2.9627085, -5.3444557);
+        shape5.lineTo(4.0372915, -5.3444557);
+        shape5.lineTo(4.0372915, 16.655544);
+        shape5.lineTo(-2.9627085, 16.655544);
         shape5.closePath();
-        shape5.moveTo(28.0, 13.0);
-        shape5.lineTo(28.0, 35.0);
-        shape5.lineTo(35.0, 35.0);
-        shape5.lineTo(35.0, 13.0);
-        shape5.lineTo(28.0, 13.0);
+        shape5.moveTo(12.0372925, 16.655544);
+        shape5.lineTo(12.0372925, -5.3444557);
+        shape5.lineTo(19.037292, -5.3444557);
+        shape5.lineTo(19.037292, 16.655544);
+        shape5.lineTo(12.0372925, 16.655544);
         shape5.closePath();
         g.setPaint(new LinearGradientPaint(
                 new Point2D.Double(-0.13080163300037384, 10.068081855773926),
@@ -164,7 +188,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
                     new Color(255, 255, 255, 255), new Color(255, 255, 255, 0),
                     new Color(255, 255, 255, 145), new Color(255, 255, 255, 0), new Color(255, 255, 255, 0) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
-                new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f)));
+                new AffineTransform(1.0f, 0.0f, 0.0f, -1.0f, -15.962708473205566f, 29.65554428100586f)));
         g.fill(shape5);
     }
 
@@ -173,7 +197,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         // _0_0_0_0_0
         g.setComposite(AlphaComposite.getInstance(3, 0.4f * origAlpha));
         AffineTransform trans_0_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 42.0f, 8.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
         paintShapeNode_0_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0_0);
         // _0_0_0_0_1
@@ -200,7 +224,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         // _0_0_0_0_5
         g.setComposite(AlphaComposite.getInstance(3, 0.15f * origAlpha));
         AffineTransform trans_0_0_0_0_5 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, -1.0f, -8.0f, 56.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
         paintShapeNode_0_0_0_0_5(g);
         g.setTransform(trans_0_0_0_0_5);
     }
@@ -209,7 +233,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0_0
         AffineTransform trans_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 7.962708473205566f, 10.34445571899414f));
         paintCompositeGraphicsNode_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0);
     }
@@ -218,7 +242,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0
         AffineTransform trans_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, -16.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
         paintCompositeGraphicsNode_0_0_0(g);
         g.setTransform(trans_0_0_0);
     }
