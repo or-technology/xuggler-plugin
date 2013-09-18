@@ -209,7 +209,8 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0_0
         AffineTransform trans_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
+        g.transform(new AffineTransform(0.9638554453849792f, 0.0f, 0.0f, 0.9638554453849792f,
+                -7.132530212402344f, 8.867469787597656f));
         paintCompositeGraphicsNode_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0);
     }
@@ -218,7 +219,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0
         AffineTransform trans_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, -16.0f));
         paintCompositeGraphicsNode_0_0_0(g);
         g.setTransform(trans_0_0_0);
     }
@@ -240,7 +241,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigX()
     {
-        return 12;
+        return 4;
     }
 
     /**
@@ -250,7 +251,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigY()
     {
-        return 12;
+        return 4;
     }
 
     /**
@@ -260,7 +261,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigWidth()
     {
-        return 26;
+        return 25;
     }
 
     /**
@@ -270,7 +271,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigHeight()
     {
-        return 26;
+        return 25;
     }
 
     /**
@@ -306,6 +307,11 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         this.height = newDimension.height;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.swing.Icon#paintIcon(java.awt.Component, java.awt.Graphics, int, int)
+     */
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y)
     {
