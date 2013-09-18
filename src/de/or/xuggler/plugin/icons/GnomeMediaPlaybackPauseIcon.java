@@ -90,32 +90,32 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
 
     private void paintShapeNode_0_0_0_0_1(Graphics2D g)
     {
-        RoundRectangle2D.Double shape1 = new RoundRectangle2D.Double(12.5, 12.5, 7.998013496398926,
-                23.000001907348633, 0.9539660215377808, 0.9539660215377808);
+        RoundRectangle2D.Double shape1 = new RoundRectangle2D.Double(4.91566276550293, 20.91566276550293,
+                7.70892858505249, 22.168676376342773, 0.919485330581665, 0.919485330581665);
         g.setPaint(new RadialGradientPaint(new Point2D.Double(28.541149139404297, 31.67877197265625),
                 12.000001f, new Point2D.Double(28.541149139404297, 31.67877197265625), new float[] {
                     0.0f, 1.0f }, new Color[] {
                     new Color(238, 238, 236, 255), new Color(146, 148, 143, 255) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
-                new AffineTransform(5.399516582489014f, 0.0f, 0.0f, 2.3034327030181885f,
-                        -126.14730834960938f, -41.85194396972656f)));
+                new AffineTransform(5.204353332519531f, 0.0f, 0.0f, 2.2201759815216064f,
+                        -128.72030639648438f, -31.471752166748047f)));
         g.fill(shape1);
         g.setPaint(new Color(85, 87, 83, 255));
-        g.setStroke(new BasicStroke(1.0f, 1, 1, 4.0f, null, 0.0f));
+        g.setStroke(new BasicStroke(0.96385545f, 1, 1, 4.0f, null, 0.0f));
         g.draw(shape1);
     }
 
     private void paintShapeNode_0_0_0_0_2(Graphics2D g)
     {
-        RoundRectangle2D.Double shape2 = new RoundRectangle2D.Double(27.5, 12.5, 7.998013496398926,
-                23.000001907348633, 0.9539660215377808, 0.9539660215377808);
+        RoundRectangle2D.Double shape2 = new RoundRectangle2D.Double(19.373493194580078, 20.91566276550293,
+                7.70892858505249, 22.168676376342773, 0.919485330581665, 0.919485330581665);
         g.setPaint(new RadialGradientPaint(new Point2D.Double(28.541149139404297, 31.67877197265625),
                 12.000001f, new Point2D.Double(28.541149139404297, 31.67877197265625), new float[] {
                     0.0f, 1.0f }, new Color[] {
                     new Color(238, 238, 236, 255), new Color(146, 148, 143, 255) },
                 MultipleGradientPaint.CycleMethod.NO_CYCLE, MultipleGradientPaint.ColorSpaceType.SRGB,
-                new AffineTransform(5.399516582489014f, 0.0f, 0.0f, 2.3034327030181885f,
-                        -126.14730834960938f, -41.85194396972656f)));
+                new AffineTransform(5.204353332519531f, 0.0f, 0.0f, 2.2201759815216064f,
+                        -128.72030639648438f, -31.471752166748047f)));
         g.fill(shape2);
         g.setPaint(new Color(85, 87, 83, 255));
         g.draw(shape2);
@@ -123,17 +123,17 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
 
     private void paintShapeNode_0_0_0_0_3(Graphics2D g)
     {
-        Rectangle2D.Double shape3 = new Rectangle2D.Double(13.5, 13.500001907348633, 5.999970436096191,
-                20.999998092651367);
+        Rectangle2D.Double shape3 = new Rectangle2D.Double(5.879518032073975, 21.879520416259766,
+                5.783103942871094, 20.2409610748291);
         g.setPaint(new Color(255, 255, 255, 255));
-        g.setStroke(new BasicStroke(0.9999999f, 1, 0, 4.0f, null, 0.0f));
+        g.setStroke(new BasicStroke(0.9638553f, 1, 0, 4.0f, null, 0.0f));
         g.draw(shape3);
     }
 
     private void paintShapeNode_0_0_0_0_4(Graphics2D g)
     {
-        Rectangle2D.Double shape4 = new Rectangle2D.Double(28.5, 13.500001907348633, 5.999970436096191,
-                20.999998092651367);
+        Rectangle2D.Double shape4 = new Rectangle2D.Double(20.33734893798828, 21.879520416259766,
+                5.783103942871094, 20.2409610748291);
         g.draw(shape4);
     }
 
@@ -173,7 +173,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         // _0_0_0_0_0
         g.setComposite(AlphaComposite.getInstance(3, 0.4f * origAlpha));
         AffineTransform trans_0_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 50.0f, 0.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 42.0f, 8.0f));
         paintShapeNode_0_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0_0);
         // _0_0_0_0_1
@@ -200,7 +200,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         // _0_0_0_0_5
         g.setComposite(AlphaComposite.getInstance(3, 0.15f * origAlpha));
         AffineTransform trans_0_0_0_0_5 = g.getTransform();
-        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, -1.0f, 0.0f, 48.0f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, -1.0f, -8.0f, 56.0f));
         paintShapeNode_0_0_0_0_5(g);
         g.setTransform(trans_0_0_0_0_5);
     }
@@ -209,8 +209,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
     {
         // _0_0_0_0
         AffineTransform trans_0_0_0_0 = g.getTransform();
-        g.transform(new AffineTransform(0.9638554453849792f, 0.0f, 0.0f, 0.9638554453849792f,
-                -7.132530212402344f, 8.867469787597656f));
+        g.transform(new AffineTransform(1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f));
         paintCompositeGraphicsNode_0_0_0_0(g);
         g.setTransform(trans_0_0_0_0);
     }
@@ -261,7 +260,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigWidth()
     {
-        return 25;
+        return 26;
     }
 
     /**
@@ -271,7 +270,7 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
      */
     public int getOrigHeight()
     {
-        return 25;
+        return 26;
     }
 
     /**
@@ -289,17 +288,31 @@ public class GnomeMediaPlaybackPauseIcon extends FlamingoSvgJavaIcon {
         this.height = height;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.swing.Icon#getIconHeight()
+     */
     @Override
     public int getIconHeight()
     {
         return height;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.swing.Icon#getIconWidth()
+     */
     @Override
     public int getIconWidth()
     {
         return width;
     }
+
+    /*
+     * Set the dimension of the icon.
+     */
 
     public void setDimension(Dimension newDimension)
     {
