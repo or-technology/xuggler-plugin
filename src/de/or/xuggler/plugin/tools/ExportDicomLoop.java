@@ -24,6 +24,7 @@ import de.or.xuggler.plugin.icons.UbuntuStudioIconsVideoProductionIcon;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.List;
 import java.util.Vector;
@@ -90,8 +91,14 @@ public class ExportDicomLoop extends AbstractExportTool {
                 final ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(iconSource);
                 ExportVideoFormat format = dialog.getSelectedCodec();
 
-                exportFrames(frames, new File("DICOM-Video." + format.fileExtension), format.codec.getID(),
-                        dialog.getSelectedFrameRate(), progress);
+                try
+                {
+                    exportFrames(frames, new File("DICOM-Video." + format.fileExtension),
+                            format.codec.getID(), dialog.getSelectedFrameRate(), progress);
+                } catch (Exception ex)
+                {
+                    logger.warn("", ex);
+                }
                 ViewerFrameManager.removeProgressBars(progress);
             }
         }).start();
@@ -115,13 +122,14 @@ public class ExportDicomLoop extends AbstractExportTool {
         }
         final IMediaWriter writer = ToolFactory.makeWriter(file.getAbsolutePath());
         int index = writer.addVideoStream(0, 0, codec, width, height);
+        final long frameRate = 1000l / fps;
         long nextFrameTime = 0;
-        final long frameRate = fps;
         for (ImageLayeredData ild : frames)
         {
             sie.setData(ild);
-            writer.encodeVideo(index, sie.createWholeImage(), nextFrameTime, TimeUnit.MILLISECONDS);
             nextFrameTime += frameRate;
+            writer.encodeVideo(index, convertToType(sie.createWholeImage(), BufferedImage.TYPE_3BYTE_BGR),
+                    nextFrameTime, TimeUnit.MILLISECONDS);
             progress.setValue(progress.getValue() + 1);
         }
         writer.flush();
@@ -146,4 +154,33 @@ public class ExportDicomLoop extends AbstractExportTool {
             }
         };
     }
+
+    /**
+     * Convert a {@link BufferedImage} of any type, to {@link BufferedImage} of a specified type. If the
+     * source image is the same type as the target type, then original image is returned, otherwise new image
+     * of the correct type is created and the content of the source image is copied into the new image.
+     * 
+     * @param sourceImage
+     *            the image to be converted
+     * @param targetType
+     *            the desired BufferedImage type
+     * 
+     * @return a BufferedImage of the specifed target type.
+     * 
+     * @see BufferedImage
+     */
+
+    public static BufferedImage convertToType(BufferedImage sourceImage, int targetType)
+    {
+        // if the source image is already the target type, return the source image
+        if (sourceImage.getType() == targetType)
+            return sourceImage;
+
+        // otherwise create a new image of the target type and draw the new image
+        BufferedImage image = new BufferedImage(sourceImage.getWidth(), sourceImage.getHeight(), targetType);
+        image.getGraphics().drawImage(sourceImage, 0, 0, null);
+
+        return image;
+    }
+
 }

@@ -36,6 +36,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JSlider;
 
 import org.apache.log4j.Logger;
 
@@ -125,7 +126,7 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
                 public void actionPerformed(ActionEvent e)
                 {
                     setActionCommand("Export");
-                    setVisible(true);
+                    setVisible(false);
                 }
             });
         }
@@ -136,13 +137,15 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
 
     private final ButtonGroup videoFormatButtonGroup = new ButtonGroup();
 
+    private JSlider fps;
+
     private JPanel getFormatAndOptionPanel()
     {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         ExportVideoFormat[] formats = {
-            new ExportVideoFormat(ICodec.ID.CODEC_ID_MPEG2VIDEO, ".mpg", "MPG2"),
-            new ExportVideoFormat(ICodec.ID.CODEC_ID_MPEG4, ".mp4", "MPG4"),
-            new ExportVideoFormat(ICodec.ID.CODEC_ID_H264, ".mpg", "H264") };
+            new ExportVideoFormat(ICodec.ID.CODEC_ID_MPEG2VIDEO, "mpg", "MPG2"),
+            new ExportVideoFormat(ICodec.ID.CODEC_ID_MPEG4, "mp4", "MPG4"),
+            new ExportVideoFormat(ICodec.ID.CODEC_ID_H264, "h264", "H264") };
         for (final ExportVideoFormat evf : formats)
         {
             final ICodec codec = evf.codec;
@@ -164,11 +167,32 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
                 }
             }
         }
-        JPanel formatPanel = new JPanel();
-        formatPanel.setLayout(new BoxLayout(formatPanel, BoxLayout.PAGE_AXIS));
-        formatPanel.add(panel);
-        formatPanel.add(createVideoCodecChooser());
+
+        JPanel formatAndOptionPanel = new JPanel();
+        formatAndOptionPanel.setLayout(new BoxLayout(formatAndOptionPanel, BoxLayout.PAGE_AXIS));
+        formatAndOptionPanel.add(panel);
+
+        formatAndOptionPanel.add(createFramesPerSecondChoser());
+
+        return formatAndOptionPanel;
+    }
+
+    private JPanel createFramesPerSecondChoser()
+    {
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Bitte wählen Sie die Bildwiederholrate: "));
+        panel.add(getFpsSlider());
         return panel;
+    }
+
+    private JSlider getFpsSlider()
+    {
+        if (fps == null)
+        {
+            fps = new JSlider(1, 100, 25);
+            fps.setPaintTicks(true);
+        }
+        return fps;
     }
 
     protected JPanel createVideoCodecChooser()
@@ -258,6 +282,6 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
 
     public int getSelectedFrameRate()
     {
-        return 25;
+        return getFpsSlider().getValue();
     }
 }
