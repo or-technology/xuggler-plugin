@@ -101,8 +101,10 @@ public class ExportDicomLoop extends AbstractExportTool {
                 }
                 ViewerFrameManager.removeProgressBars(progress);
             }
-        }).start();
+        }, ExportDicomLoop.class.getSimpleName() + "-" + (++threadCount)).start();
     }
+
+    private static int threadCount = 0;
 
     public static void exportFrames(List<ImageLayeredData> frames, File file, ID codec, int fps,
             ProgressStatusBarModel progress)
