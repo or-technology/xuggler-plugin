@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
-<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin.XugglerPlugin" version="1.0.1014">
+<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin.XugglerPlugin" version="1.0.1015">
 	<requires>
 		<import exported="false" match="compatible" optional="false" plugin-id="de.or.plugin.core" reverse-lookup="false"/>
 	</requires>
 	<runtime>
-		<library id="dicomPACSXuggler" path="classes/" type="code"/>
+		<library id="core" path="./" type="code"/>
 		<library id="commons-cli.jar" path="libs/commons-cli.jar" type="code"/>
 		<library id="logback-classic.jar" path="libs/logback-classic.jar" type="code"/>
 		<library id="logback-core.jar" path="libs/logback-core.jar" type="code"/>
@@ -20,11 +20,11 @@
 		<library id="xuggle-xuggler-arch-x86_64-w64-mingw32.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-w64-mingw32.jar" type="code"/>
 		<library id="xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar" path="libs/5.4/xuggle-xuggler-arch-x86_64-xuggle-darwin11.jar" type="code"/>
 	</runtime>
-<!--	<extension id="xugglerPlugin" plugin-id="de.or.plugin.core" point-id="DisplayPlugin">
+	<extension id="xugglerPlugin" plugin-id="de.or.plugin.core" point-id="DisplayPlugin">
 		<parameter id="class" value="de.or.xuggler.plugin.XugglerPlugin"/>
 		<parameter id="name" value="Video player Tool"/>
 		<parameter id="description" value="Plugin to play videos with Xuggler "/>
-	</extension> -->
+	</extension>
 	<extension id="toolPlugin" plugin-id="de.or.plugin.core" point-id="ToolPlugin">
 		<parameter id="class" value="de.or.xuggler.plugin.XugglerPlugin"/>
 		<parameter id="name" value="ExportDicomLoop"/>
