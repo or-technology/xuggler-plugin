@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
-<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin" version="1.0.1009">
+<plugin class="de.or.xuggler.plugin.XugglerPlugin" id="de.or.xuggler.plugin" version="1.0.1011">
 	<requires>
 		<import exported="false" match="compatible" optional="false" plugin-id="de.or.plugin.core" reverse-lookup="false"/>
 	</requires>
@@ -25,4 +25,10 @@
 		<parameter id="name" value="Video player Tool"/>
 		<parameter id="description" value="Plugin to play videos with Xuggler "/>
 	</extension>
+		<extension id="toolPlugin" plugin-id="de.or.plugin.core" point-id="ToolPlugin">
+		<parameter id="class" value="de.or.xuggler.plugin.XugglerPlugin"/>
+		<parameter id="name" value="ExportDicomLoop"/>
+		<parameter id="description" value="Export DICOM Frames as video"/>
+	</extension>
+	
 </plugin>
