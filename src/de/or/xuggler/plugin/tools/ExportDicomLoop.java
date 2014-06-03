@@ -19,6 +19,7 @@ import de.or.dicom.viewer.tasks.ExportTask;
 import de.or.dicom.viewer.tools.ToolDescription;
 import de.or.dicom.viewer.tools.inout.AbstractExportTool;
 import de.or.utils.config.LocalesConfig;
+import de.or.utils.icons.IconCreator;
 import de.or.xuggler.plugin.icons.UbuntuStudioIconsVideoProductionIcon;
 
 import java.awt.Dimension;
@@ -88,7 +89,8 @@ public class ExportDicomLoop extends AbstractExportTool {
             public void run()
             {
                 String iconSource = getDescription().getIconSource();
-                final ProgressStatusBarModel progress = ViewerFrameManager.createProgressBars(iconSource);
+                final ProgressStatusBarModel progress = ViewerFrameManager.getInstance().createProgressBars(
+                        new IconCreator(iconSource, getClass().getClassLoader()));
                 ExportVideoFormat format = dialog.getSelectedCodec();
 
                 try
@@ -99,7 +101,7 @@ public class ExportDicomLoop extends AbstractExportTool {
                 {
                     logger.warn("", ex);
                 }
-                ViewerFrameManager.removeProgressBars(progress);
+                ViewerFrameManager.getInstance().removeProgressBars(progress);
             }
         }, ExportDicomLoop.class.getSimpleName() + "-" + (++threadCount)).start();
     }
