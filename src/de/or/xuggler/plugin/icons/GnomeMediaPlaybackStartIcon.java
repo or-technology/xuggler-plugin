@@ -5,10 +5,7 @@ import de.or.utils.icons.FlamingoSvgJavaIcon;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Composite;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 import java.awt.MultipleGradientPaint;
@@ -33,6 +30,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      * @param g
      *            Graphics context.
      */
+    @Override
     public void paint(Graphics2D g)
     {
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -42,9 +40,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
         {
             AlphaComposite origAlphaComposite = (AlphaComposite) origComposite;
             if (origAlphaComposite.getRule() == AlphaComposite.SRC_OVER)
-            {
                 origAlpha = origAlphaComposite.getAlpha();
-            }
         }
 
         // _0
@@ -215,6 +211,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      * 
      * @return The width of the bounding box of the original SVG image.
      */
+    @Override
     public int getOrigWidth()
     {
         return 22;
@@ -225,6 +222,7 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      * 
      * @return The height of the bounding box of the original SVG image.
      */
+    @Override
     public int getOrigHeight()
     {
         return 26;
@@ -235,8 +233,8 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
      */
     public GnomeMediaPlaybackStartIcon()
     {
-        this.width = getOrigWidth();
-        this.height = getOrigHeight();
+        width = getOrigWidth();
+        height = getOrigHeight();
     }
 
     public GnomeMediaPlaybackStartIcon(int width, int height)
@@ -245,54 +243,4 @@ public class GnomeMediaPlaybackStartIcon extends FlamingoSvgJavaIcon {
         this.height = height;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see javax.swing.Icon#getIconHeight()
-     */
-    @Override
-    public int getIconHeight()
-    {
-        return height;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see javax.swing.Icon#getIconWidth()
-     */
-    @Override
-    public int getIconWidth()
-    {
-        return width;
-    }
-
-    /*
-     * Set the dimension of the icon.
-     */
-
-    public void setDimension(Dimension newDimension)
-    {
-        this.width = newDimension.width;
-        this.height = newDimension.height;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see javax.swing.Icon#paintIcon(java.awt.Component, java.awt.Graphics, int, int)
-     */
-    @Override
-    public void paintIcon(Component c, Graphics g, int x, int y)
-    {
-        Graphics2D g2d = (Graphics2D) g.create();
-        g2d.translate(x, y);
-
-        double coef1 = (double) this.width / (double) getOrigWidth();
-        double coef2 = (double) this.height / (double) getOrigHeight();
-        double coef = Math.min(coef1, coef2);
-        g2d.scale(coef, coef);
-        paint(g2d);
-        g2d.dispose();
-    }
 }

@@ -10,17 +10,13 @@ import de.or.utils.icons.FlamingoSvgJavaIcon;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 import java.awt.RadialGradientPaint;
-import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
 
 /**
  * This class has been automatically generated using <a href="https://flamingo.dev.java.net">Flamingo SVG
@@ -46,21 +42,15 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
     }
 
     @Override
-    public synchronized void paintIcon(Component c, Graphics g, int x, int y)
+    protected int getOrigWidth()
     {
-        if (image == null)
-        {
-            image = new BufferedImage(getIconWidth(), getIconHeight(), BufferedImage.TYPE_INT_ARGB);
-            double coef = Math.min((double) width / (double) 36, (double) height / (double) 40);
+        return 36;
+    }
 
-            Graphics2D g2d = image.createGraphics();
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2d.scale(coef, coef);
-            paint(g2d);
-            g2d.dispose();
-        }
-
-        g.drawImage(image, x, y, null);
+    @Override
+    protected int getOrigHeight()
+    {
+        return 40;
     }
 
     /**
@@ -69,7 +59,8 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
      * @param g
      *            Graphics context.
      */
-    private static void paint(Graphics2D g)
+    @Override
+    protected void paint(Graphics2D g)
     {
         Shape shape = null;
 
