@@ -1,27 +1,4 @@
-<project name="dicomPACSXuggler" default="zip">
-
-	<target name="compileEclipseWorkspace">
-		<javac srcdir="${basedir}\src" destdir="${basedir}\bin" classpath="${eclipse.workspace}\libs\head\*.*" debug="on" compiler="jikes" />
-	</target>
-
-	<target name="zip" depends="compileEclipseWorkspace">
-		<zip destfile=".\build\de.or.xuggler.plugin.zip">
-			<mappedresources>
-				<fileset dir="${basedir}/bin" />
-				<globmapper from="*" to="classes/*" />
-			</mappedresources>
-			<fileset file="${basedir}\plugin.xml" />
-			<fileset dir="${basedir}/src/">
-				<include name="*.properties" />
-			</fileset>
-			<fileset dir="${basedir}">
-				<include name="5.4/**/*.*" />
-				<include name="libs/**/*.*" />
-				<exclude name="**/.svn/**/*.*" />
-			</fileset>
-		</zip>
-	</target>
-
+<project name="dicomPACSXuggler" default="deploy">
 
 	<!-- ================================= 
           target: deploy              
