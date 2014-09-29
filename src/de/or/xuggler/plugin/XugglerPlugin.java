@@ -99,7 +99,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     @Override
     public DisplayComponentContainer createDisplayComponentContainer()
     {
-        return new XugglerContainer();
+        return new CopyOfXugglerContainer();
     }
 
     public String getToolGroupID()

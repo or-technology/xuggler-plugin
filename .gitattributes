@@ -11,6 +11,7 @@ libs/logback-core.jar -text
 libs/slf4j-api.jar -text
 /plugin.xml -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
+src/de/or/xuggler/plugin/CopyOfXugglerContainer.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ImageComponent.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/SoundPlayer.java -text svneol=unset#text/plain

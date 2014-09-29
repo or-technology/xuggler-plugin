@@ -19,11 +19,11 @@ import org.apache.log4j.Logger;
 
 /**
  */
-public class XugglerContainer extends AbstractDisplayComponentContainer {
+public class CopyOfXugglerContainer extends AbstractDisplayComponentContainer {
 
     XugglerPlayer player;
 
-    public XugglerContainer()
+    public CopyOfXugglerContainer()
     {
         super();
         setLayout(new BorderLayout());
@@ -46,7 +46,7 @@ public class XugglerContainer extends AbstractDisplayComponentContainer {
                     player.showVideo(path);
                 } catch (Exception e)
                 {
-                    Logger.getLogger(XugglerContainer.class).warn("", e);
+                    Logger.getLogger(CopyOfXugglerContainer.class).warn("", e);
                 }
         }
     }
