@@ -105,56 +105,10 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
         return false;
     }
 
-    protected class TestContainer extends JPanel implements DisplayComponentContainer {
-
-        public void setDisplayableUnit(DisplayableUnit unit)
-        {
-            // TODO Auto-generated method stub
-
-        }
-
-        public INavigator createNavigator(MatrixModel model)
-        {
-            // TODO Auto-generated method stub
-            return new EmptyNavigator();
-        }
-
-        public Component getDisplayComponent()
-        {
-            // TODO Auto-generated method stub
-            return this;
-        }
-
-        public void setActive(boolean active)
-        {
-            // TODO Auto-generated method stub
-
-        }
-
-        public void setToolCursor(Cursor cursor)
-        {
-            // TODO Auto-generated method stub
-
-        }
-
-        public Properties getProperties()
-        {
-            // TODO Auto-generated method stub
-            return null;
-        }
-
-        public void setProperties(Properties p)
-        {
-            // TODO Auto-generated method stub
-
-        }
-
-    }
-
     @Override
     public DisplayComponentContainer createDisplayComponentContainer()
     {
-        return new TestContainer();
+        return new XugglerContainer();
     }
 
     public String getToolGroupID()
