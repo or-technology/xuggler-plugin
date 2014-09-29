@@ -5,6 +5,8 @@ import static java.awt.Color.WHITE;
 import static java.awt.MultipleGradientPaint.ColorSpaceType.SRGB;
 import static java.awt.MultipleGradientPaint.CycleMethod.NO_CYCLE;
 
+import de.or.guiUtils.icons.FlamingoSvgJavaIcon;
+
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -21,7 +23,7 @@ import java.awt.geom.RoundRectangle2D;
  * This class has been automatically generated using <a href="https://flamingo.dev.java.net">Flamingo SVG
  * transcoder</a>.
  */
-public class GnomeAudioVolumeMutedIcon extends de.or.guiUtils.icons.FlamingoSvgJavaIcon {
+public class GnomeAudioVolumeMutedIcon extends FlamingoSvgJavaIcon {
 
     /**
      * Creates a new transcoded SVG image.

@@ -1,5 +1,7 @@
 package de.or.xuggler.plugin.icons;
 
+import de.or.guiUtils.icons.FlamingoSvgJavaIcon;
+
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -17,7 +19,7 @@ import java.awt.geom.Point2D;
  * This class has been automatically generated using svg2java
  * 
  */
-public class GnomeMediaSeekForwardIcon extends de.or.guiUtils.icons.FlamingoSvgJavaIcon {
+public class GnomeMediaSeekForwardIcon extends FlamingoSvgJavaIcon {
 
     private float origAlpha = 1.0f;
 
