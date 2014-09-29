@@ -51,7 +51,7 @@ public class VideoPlayer {
 
     private VideoPanel screen = null;
 
-    private boolean isStopped = false;
+    private boolean paused = false;
 
     private boolean isMute = false;
 
@@ -89,14 +89,19 @@ public class VideoPlayer {
         return volumeModel;
     }
 
-    public void setStopped(boolean isStopped)
+    public void setPaused(boolean pause)
     {
-        this.isStopped = isStopped;
-        if (!isStopped)
+        paused = pause;
+        if (!pause)
         {
             firstTimestampInStream = currentTimestamp;
             startTime = System.currentTimeMillis();
         }
+    }
+
+    public boolean isPaused()
+    {
+        return paused;
     }
 
     public void setMute(boolean isMute)
@@ -233,30 +238,32 @@ public class VideoPlayer {
 
         packet = IPacket.make();
 
-        while (container.readNextPacket(packet) >= 0)
+        while (container != null && videoCoder != null)
         {
-            if (isStopped)
-                try
-                {
-                    Thread.sleep(500);
-                    continue;
-                } catch (InterruptedException ex)
-                {
-                    LOGGER.warn("", ex);
-                }
+            while (container.readNextPacket(packet) >= 0)
+            {
+                while (paused)
+                    Thread.sleep(100);
+                if (packet.getStreamIndex() == audioStreamId)
+                    try
+                    {
+                        handleAudioPacket();
+                    } catch (Exception e)
+                    {
+                        LOGGER.warn("", e);
+                    }
+                else if (packet.getStreamIndex() == videoStreamId)
+                    try
+                    {
+                        handleVideoPacket(resampler);
+                    } catch (Exception e)
+                    {
+                        LOGGER.warn("", e);
 
-            if (packet.getStreamIndex() == audioStreamId)
-                try
-                {
-                    handleAudioPacket();
-                } catch (Exception e)
-                {
-                    LOGGER.warn("", e);
-                }
-            else if (packet.getStreamIndex() == videoStreamId)
-                handleVideoPacket(resampler);
+                    }
+            }
+            seekTo(0);
         }
-        seekTo(0);
     }
 
     protected void logVideoInfo()
@@ -306,7 +313,7 @@ public class VideoPlayer {
         int offset = 0;
         while (offset < packet.getSize())
         {
-            if (isStopped)
+            if (paused)
                 break;
             int bytesDecoded = videoCoder.decodeVideo(picture, packet, offset);
             if (bytesDecoded < 0)
@@ -340,7 +347,7 @@ public class VideoPlayer {
         int offset = 0;
         while (offset < packet.getSize())
         {
-            if (isStopped)
+            if (paused)
                 break;
             int bytesDecoded = audioCoder.decodeAudio(samples, packet, offset);
             if (bytesDecoded < 0)

@@ -249,8 +249,8 @@ public class XugglerPlayer extends JPanel {
     public static void main(String args[])
     {
         LoggingTools.initLogger();
-        final JFrame frame = new JFrame();
         final JFileChooser fileChooser = new JFileChooser();
+        final JFrame frame = new JFrame();
         final XugglerPlayer player = new XugglerPlayer();
         frame.addKeyListener(new KeyAdapter() {
 
@@ -267,14 +267,15 @@ public class XugglerPlayer extends JPanel {
         });
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION)
-        {
-            String filename = fileChooser.getSelectedFile().getAbsolutePath();
-            player.showVideo(filename);
-            frame.getContentPane().add(player);
-            frame.setBounds(100, 100, 900, 700);
-            frame.setVisible(true);
-        }
+        String filename = "";
+        if (args.length > 0)
+            filename = args[0];
+        else if (fileChooser.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION)
+            filename = fileChooser.getSelectedFile().getAbsolutePath();
+        player.showVideo(filename);
+        frame.getContentPane().add(player);
+        frame.setBounds(100, 100, 900, 700);
+        frame.setVisible(true);
     }
 
     String videoFilename;
@@ -285,7 +286,7 @@ public class XugglerPlayer extends JPanel {
         super.removeNotify();
         if (videoPlayer != null)
         {
-            videoPlayer.setStopped(true);
+            videoPlayer.setPaused(true);
             videoPlayer.dispose();
         }
     }
@@ -301,7 +302,7 @@ public class XugglerPlayer extends JPanel {
 
                     public void run()
                     {
-                        togglePlayMode();
+                        // togglePlayMode();
                         videoPlayer = new VideoPlayer(filename, screen);
                         videoControlSlider.setModel(videoPlayer.getTimeModel());
                         videoPlayer.getTimeModel().addProgressBar(videoProgress);
@@ -331,10 +332,11 @@ public class XugglerPlayer extends JPanel {
                         volumeSlider.setModel(volumeModel);
                         try
                         {
-                            if (!isStopped)
+                            if (!videoPlayer.isPaused())
+                            {
                                 videoPlayer.startPlayback();
-                            videoPlayer.dispose();
-                            showVideo(filename);
+                                videoPlayer.dispose();
+                            }
                         } catch (Exception ex)
                         {
                             Logger.getLogger(XugglerPlayer.class).warn("", ex);
@@ -363,15 +365,14 @@ public class XugglerPlayer extends JPanel {
         if (videoPlayer == null)
             return;
         videoPlayer.setPlaybackMultiplier(1);
-        if (isStopped == true)
+        if (videoPlayer.isPaused())
             playButton.setIcon(pauseIcon);
         else
         {
             videoPlayer.resetDelay();
             playButton.setIcon(playIcon);
         }
-        isStopped = !isStopped;
-        videoPlayer.setStopped(isStopped);
+        videoPlayer.setPaused(!videoPlayer.isPaused());
     }
 
     JSlider videoControlSlider = new JSlider();
