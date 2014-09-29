@@ -4,16 +4,16 @@
 package de.or.xuggler.plugin.tools;
 
 import de.or.dicom.viewer.control.FontChanger;
-import de.or.dicom.viewer.dialog.OnTopDialog;
 import de.or.dicom.viewer.dialog.SelectionPanel;
 import de.or.dicom.viewer.dialog.StandardSelectionDialog;
 import de.or.dicom.viewer.dialog.TargetPanel;
 import de.or.dicom.viewer.tasks.ExportTask;
-import de.or.gui.util.VerticalLayout;
+import de.or.guiUtils.VerticalLayout;
+import de.or.guiUtils.dialog.OnTopDialog;
+import de.or.guiUtils.icons.IconRegistry;
 import de.or.utils.config.Config;
 import de.or.utils.config.FontConfig;
 import de.or.utils.config.LocalesConfig;
-import de.or.utils.icons.IconRegistry;
 import de.or.xuggler.plugin.icons.UbuntuStudioIconsVideoProductionIcon;
 
 import java.awt.BorderLayout;
@@ -38,8 +38,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
 
-import org.apache.log4j.Logger;
-
 import com.xuggle.xuggler.ICodec;
 
 /**
@@ -52,15 +50,13 @@ import com.xuggle.xuggler.ICodec;
  */
 public class ExportDicomLoopDialog extends StandardSelectionDialog {
 
-    private static final Logger LOGGER = Logger.getLogger(ExportDicomLoopDialog.class);
-
     TargetPanel targetPanel;
 
     public ExportDicomLoopDialog(JFrame frame, ExportTask task, ExportDicomLoop tool)
     {
         super(frame);
-        this.exportTask = task;
-        this.exportDicomLoop = tool;
+        exportTask = task;
+        exportDicomLoop = tool;
         setTitle(LocalesConfig.getString("ExportDialog.Title", "Bilder exportieren"));
         getContentPane().add(getMainPanel());
         pack();
@@ -72,7 +68,7 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
 
     private ExportTask exportTask;
 
-    private ExportDicomLoop exportDicomLoop;
+    private final ExportDicomLoop exportDicomLoop;
 
     protected ExportTask getExportTask()
     {

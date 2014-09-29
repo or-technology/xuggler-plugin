@@ -5,8 +5,6 @@ import static java.awt.Color.WHITE;
 import static java.awt.MultipleGradientPaint.ColorSpaceType.SRGB;
 import static java.awt.MultipleGradientPaint.CycleMethod.NO_CYCLE;
 
-import de.or.utils.icons.FlamingoSvgJavaIcon;
-
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -23,7 +21,7 @@ import java.awt.geom.RoundRectangle2D;
  * This class has been automatically generated using <a href="https://flamingo.dev.java.net">Flamingo SVG
  * transcoder</a>.
  */
-public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
+public class GnomeCameraPhotoIcon extends de.or.guiUtils.icons.FlamingoSvgJavaIcon {
 
     /**
      * Creates a new transcoded SVG image.
@@ -87,7 +85,8 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(13.7262745, 30.125, 18.875, 32.699364, 18.875, 35.875);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(7.375, 35.875), 11.5f, new Point2D.Double(7.375, 35.875), new float[] {
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(7.375, 35.875), 11.5f, new Point2D.Double(
+                7.375, 35.875), new float[] {
             0, 1 }, new Color[] {
             BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 0.5f, 0, 17.9375f)));
         g.fill(shape);
@@ -136,9 +135,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(5.2073174, 9.5);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(6.005203723907471, 7.110019683837891), new Point2D.Double(37.57537841796875, 44), new float[] {
-            0, 0.5f, 0.75f, 1 }, new Color[] {
-            new Color(0xBABDB6), new Color(0xE0E0E0), new Color(0xC0C3BB), new Color(0xDBDBDB) }, NO_CYCLE, SRGB, new AffineTransform(0.9756098f, 0, 0, 1, 0.085365854f, -4)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(6.005203723907471, 7.110019683837891),
+                new Point2D.Double(37.57537841796875, 44), new float[] {
+                    0, 0.5f, 0.75f, 1 }, new Color[] {
+                    new Color(0xBABDB6), new Color(0xE0E0E0), new Color(0xC0C3BB), new Color(0xDBDBDB) },
+                NO_CYCLE, SRGB, new AffineTransform(0.9756098f, 0, 0, 1, 0.085365854f, -4)));
         g.fill(shape);
         g.setPaint(new Color(0x888A85));
         g.setStroke(new BasicStroke(1, 0, 0, 10));
@@ -161,17 +162,21 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(5.664634, 9.865852);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(44.5, 32.25), new Point2D.Double(40.625, 32.25), new float[] {
-            0, 1 }, new Color[] {
-            BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9512194f, 0, 0, 0.9756096f, 0.6707319f, -3.304878f)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(44.5, 32.25),
+                new Point2D.Double(40.625, 32.25), new float[] {
+                    0, 1 }, new Color[] {
+                    BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9512194f, 0, 0,
+                        0.9756096f, 0.6707319f, -3.304878f)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.4764706f * origAlpha));
 
         // _0_0_4
         shape = new RoundRectangle2D.Double(14.125, 30.5, 25.625, 4.5, 1.1863425970077515, 1.25);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(31.5, 39), new Point2D.Double(31.5, 34.49826431274414), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(31.5, 39), new Point2D.Double(31.5,
+                34.49826431274414), new float[] {
             0, 1 }, new Color[] {
-            WHITE, new Color(0xA5A5A5, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9490741f, 0, 0, 1, -1.1788194f, -4)));
+            WHITE, new Color(0xA5A5A5, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9490741f, 0, 0, 1,
+                -1.1788194f, -4)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 1 * origAlpha));
 
@@ -185,9 +190,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(41.8125, 20.068287, 36.713596, 15.0, 30.4375, 15.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.992923736572266, 42.25815963745117), new Point2D.Double(39.224056243896484, 19.70405387878418), new float[] {
-            0, 0.5f, 0.75f, 1 }, new Color[] {
-            new Color(0xBABDB6), WHITE, new Color(0xC0C3BB), WHITE }, NO_CYCLE, SRGB, new AffineTransform(0.9780423f, 0, 0, 0.9730736f, 1.5876454f, -1.307902f)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.992923736572266, 42.25815963745117),
+                new Point2D.Double(39.224056243896484, 19.70405387878418), new float[] {
+                    0, 0.5f, 0.75f, 1 }, new Color[] {
+                    new Color(0xBABDB6), WHITE, new Color(0xC0C3BB), WHITE }, NO_CYCLE, SRGB,
+                new AffineTransform(0.9780423f, 0, 0, 0.9730736f, 1.5876454f, -1.307902f)));
         g.fill(shape);
 
         // _0_0_6
@@ -203,9 +210,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(4.0, 33.763325);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(5, 29.951862335205078), new Point2D.Double(20, 29.951862335205078), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(5, 29.951862335205078), new Point2D.Double(20,
+                29.951862335205078), new float[] {
             0, 0.16071428f, 0.56037414f, 1 }, new Color[] {
-            new Color(0x898B86), new Color(0xB3B3B0), new Color(0x71746F), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 1, 0, -4)));
+            new Color(0x898B86), new Color(0xB3B3B0), new Color(0x71746F), new Color(0x555753) }, NO_CYCLE,
+                SRGB, new AffineTransform(1, 0, 0, 1, 0, -4)));
         g.fill(shape);
 
         // _0_0_7
@@ -224,9 +233,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
 
         g.setPaint(new Color(0xF6F6F6));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(24.03818130493164, 18.620981216430664), new Point2D.Double(24.03818130493164, 15.495981216430664), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9755756f, 0, 0, 1, 0.1099098f, -4)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(24.03818130493164, 18.620981216430664),
+                new Point2D.Double(24.03818130493164, 15.495981216430664), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(0.9755756f, 0, 0,
+                        1, 0.1099098f, -4)));
         g.draw(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.14705881f * origAlpha));
 
@@ -247,9 +258,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(13.928617, 15.0625, 14.116117, 35.107075, 14.116117, 35.107075);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(13.928616523742676, 29.084787368774414), new Point2D.Double(35.02602005004883, 29.084787368774414), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 1, 0, -4)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(13.928616523742676, 29.084787368774414),
+                new Point2D.Double(35.02602005004883, 29.084787368774414), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB,
+                new AffineTransform(1, 0, 0, 1, 0, -4)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.37058824f * origAlpha));
         transformations.offer(g.getTransform());
@@ -273,9 +286,10 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(5.21875, 10.65625);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.84375, 27.124889373779297), new Point2D.Double(25.84375, 45), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.84375, 27.124889373779297),
+                new Point2D.Double(25.84375, 45), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.99793345f, 0, 0, 10));
         g.draw(shape);
 
@@ -295,7 +309,8 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
 
         g.setPaint(new Color(0x2E3436));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.0625, 22.125), new Point2D.Double(24, 24.9375), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.0625, 22.125), new Point2D.Double(24,
+                24.9375), new float[] {
             0, 1 }, new Color[] {
             new Color(0x888A85), WHITE }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.90909094f, 0, 0, 10));
@@ -316,7 +331,8 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
 
         g.setPaint(new Color(0x2E3436));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.0625, 22.125), new Point2D.Double(24, 24.9375), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(22.0625, 22.125), new Point2D.Double(24,
+                24.9375), new float[] {
             0, 1 }, new Color[] {
             new Color(0x888A85), WHITE }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(1.8750001f, 0, 0, 10));
@@ -325,14 +341,19 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         g.setTransform(transformations.poll()); // _0_0_12
 
         // _0_0_13
-        shape = new RoundRectangle2D.Double(33.5, 14.5, 7.999996662139893, 4, 2.5788350105285645, 2.6241064071655273);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(6.559582710266113, 29.373809814453125), new Point2D.Double(6.559582710266113, 30.19115447998047), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xCBCBCB) }, NO_CYCLE, SRGB, new AffineTransform(1.2673265f, 0, 0, 1.7297297f, 28.430708f, -34.58105f)));
+        shape = new RoundRectangle2D.Double(33.5, 14.5, 7.999996662139893, 4, 2.5788350105285645,
+                2.6241064071655273);
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(6.559582710266113, 29.373809814453125),
+                new Point2D.Double(6.559582710266113, 30.19115447998047), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xCBCBCB) }, NO_CYCLE, SRGB, new AffineTransform(1.2673265f, 0, 0,
+                        1.7297297f, 28.430708f, -34.58105f)));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(7.915133476257324, 30.81684112548828), new Point2D.Double(7.915133476257324, 24.700984954833984), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xEEEEEE), new Color(0xA2A2A2) }, NO_CYCLE, SRGB, new AffineTransform(1.13066f, 0, 0, 0.6747171f, 28.550674f, -1.9552823f)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(7.915133476257324, 30.81684112548828),
+                new Point2D.Double(7.915133476257324, 24.700984954833984), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xEEEEEE), new Color(0xA2A2A2) }, NO_CYCLE, SRGB, new AffineTransform(1.13066f,
+                        0, 0, 0.6747171f, 28.550674f, -1.9552823f)));
         g.setStroke(new BasicStroke(1, 0, 0, 4));
         g.draw(shape);
         transformations.offer(g.getTransform());
@@ -349,9 +370,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(38.31035, 29.13932, 39.422047, 31.06604, 39.421204, 33.150757);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.63262176513672, 33.1507568359375), new Point2D.Double(39.42120361328125, 33.1507568359375), new float[] {
-            0, 0.5f, 0.75f, 1 }, new Color[] {
-            new Color(0x72776C), new Color(0xE0E0E0), new Color(0x8F9587), new Color(0xC1C1C1) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.63262176513672, 33.1507568359375),
+                new Point2D.Double(39.42120361328125, 33.1507568359375), new float[] {
+                    0, 0.5f, 0.75f, 1 }, new Color[] {
+                    new Color(0x72776C), new Color(0xE0E0E0), new Color(0x8F9587), new Color(0xC1C1C1) },
+                NO_CYCLE, SRGB, new AffineTransform()));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_14
@@ -369,13 +392,15 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(38.31035, 29.13932, 39.422047, 31.06604, 39.421204, 33.150757);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(35.132232666015625, 38.14469528198242), 5.9602365f, new Point2D.Double(35.132232666015625, 38.14469528198242), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xCCCCCC) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(35.132232666015625, 38.14469528198242),
+                5.9602365f, new Point2D.Double(35.132232666015625, 38.14469528198242), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xCCCCCC) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375), new Point2D.Double(32.67120361328125, 39.4843864440918), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xA5A5A5) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375),
+                new Point2D.Double(32.67120361328125, 39.4843864440918), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xA5A5A5) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.23515993f, 0, 0, 10));
         g.draw(shape);
 
@@ -394,9 +419,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(38.31035, 29.13932, 39.422047, 31.06604, 39.421204, 33.150757);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.63262176513672, 33.1507568359375), new Point2D.Double(39.42120361328125, 33.1507568359375), new float[] {
-            0, 0.5f, 0.75f, 1 }, new Color[] {
-            new Color(0x72776C), new Color(0xE0E0E0), new Color(0x8F9587), new Color(0xC1C1C1) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(25.63262176513672, 33.1507568359375),
+                new Point2D.Double(39.42120361328125, 33.1507568359375), new float[] {
+                    0, 0.5f, 0.75f, 1 }, new Color[] {
+                    new Color(0x72776C), new Color(0xE0E0E0), new Color(0x8F9587), new Color(0xC1C1C1) },
+                NO_CYCLE, SRGB, new AffineTransform()));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_16
@@ -414,13 +441,15 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(38.31035, 29.13932, 39.422047, 31.06604, 39.421204, 33.150757);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375), 5.9602365f, new Point2D.Double(32.753944396972656, 29.5257568359375), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xCCCCCC) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375),
+                5.9602365f, new Point2D.Double(32.753944396972656, 29.5257568359375), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xCCCCCC) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375), new Point2D.Double(32.67120361328125, 39.4843864440918), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xA5A5A5) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(32.753944396972656, 29.5257568359375),
+                new Point2D.Double(32.67120361328125, 39.4843864440918), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xA5A5A5) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.3025381f, 0, 0, 10));
         g.draw(shape);
 
@@ -437,25 +466,31 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(34.133568, 29.625, 35.8125, 31.303932, 35.8125, 33.375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(28.3125, 33.375), new Point2D.Double(35.8125, 33.375), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(28.3125, 33.375), new Point2D.Double(35.8125,
+                33.375), new float[] {
             0, 0.5f, 1 }, new Color[] {
-            new Color(0x2E3436), new Color(0x6B797D), new Color(0x2E3436) }, NO_CYCLE, SRGB, new AffineTransform()));
+            new Color(0x2E3436), new Color(0x6B797D), new Color(0x2E3436) }, NO_CYCLE, SRGB,
+                new AffineTransform()));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_18
         g.setComposite(AlphaComposite.getInstance(3, 0.47058824f * origAlpha));
 
         // _0_0_19
-        shape = new RoundRectangle2D.Double(26.475425720214844, 25.37565803527832, 8.178380012512207, 4.564979553222656, 1.8975083827972412, 2.4713375568389893);
+        shape = new RoundRectangle2D.Double(26.475425720214844, 25.37565803527832, 8.178380012512207,
+                4.564979553222656, 1.8975083827972412, 2.4713375568389893);
         g.setPaint(WHITE);
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 1 * origAlpha));
 
         // _0_0_20
-        shape = new RoundRectangle2D.Double(26.475425720214844, 24.80805778503418, 8.178380012512207, 5, 2.264902353286743, 2.264902353286743);
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(33.71739196777344, 34.22916793823242), 3.5f, new Point2D.Double(33.71739196777344, 34.22916793823242), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0x717171), BLACK }, NO_CYCLE, SRGB, new AffineTransform(0.9597076f, 0, 0, 1.4285709f, -0.6258796f, -20.549067f)));
+        shape = new RoundRectangle2D.Double(26.475425720214844, 24.80805778503418, 8.178380012512207, 5,
+                2.264902353286743, 2.264902353286743);
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(33.71739196777344, 34.22916793823242), 3.5f,
+                new Point2D.Double(33.71739196777344, 34.22916793823242), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0x717171), BLACK }, NO_CYCLE, SRGB, new AffineTransform(0.9597076f, 0, 0,
+                        1.4285709f, -0.6258796f, -20.549067f)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.7823529f * origAlpha));
         transformations.offer(g.getTransform());
@@ -472,9 +507,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(11.633744, 16.663357, 12.198016, 17.174227, 12.197592, 17.726992);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 15.629610061645508), 2.9610097f, new Point2D.Double(9.23658275604248, 15.629610061645508), new float[] {
-            0, 0.5f, 1 }, new Color[] {
-            BLACK, BLACK, new Color(0xAFAFAF) }, NO_CYCLE, SRGB, new AffineTransform(1.5304128f, 0, 0, 0.7994693f, -4.899202f, 4.1359506f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 15.629610061645508),
+                2.9610097f, new Point2D.Double(9.23658275604248, 15.629610061645508), new float[] {
+                    0, 0.5f, 1 }, new Color[] {
+                    BLACK, BLACK, new Color(0xAFAFAF) }, NO_CYCLE, SRGB, new AffineTransform(1.5304128f, 0,
+                        0, 0.7994693f, -4.899202f, 4.1359506f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_21
@@ -493,9 +530,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(11.633744, 16.663357, 12.198016, 17.174227, 12.197592, 17.726992);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 16.462448120117188), 2.9610097f, new Point2D.Double(9.23658275604248, 16.462448120117188), new float[] {
-            0, 0.32142857f, 0.5f, 1 }, new Color[] {
-            WHITE, new Color(0xEBEBEB), new Color(0x909090), new Color(0xFAFAFA) }, NO_CYCLE, SRGB, new AffineTransform(1.9559599f, 0, 0, 1.02177f, -8.8298025f, 0.2455734f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 16.462448120117188),
+                2.9610097f, new Point2D.Double(9.23658275604248, 16.462448120117188), new float[] {
+                    0, 0.32142857f, 0.5f, 1 }, new Color[] {
+                    WHITE, new Color(0xEBEBEB), new Color(0x909090), new Color(0xFAFAFA) }, NO_CYCLE, SRGB,
+                new AffineTransform(1.9559599f, 0, 0, 1.02177f, -8.8298025f, 0.2455734f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_22
@@ -514,9 +553,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(4.54369, 9.875, 3.84375, 10.48781, 3.84375, 11.28125);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(24.75, 14.559897422790527), new Point2D.Double(24.75, 17.5625), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(24.75, 14.559897422790527), new Point2D.Double(
+                24.75, 17.5625), new float[] {
             0, 1 }, new Color[] {
-            WHITE, new Color(0x8B8B8B) }, NO_CYCLE, SRGB, new AffineTransform(0.9747923f, 0, 0, 1, 0.09689207f, -4)));
+            WHITE, new Color(0x8B8B8B) }, NO_CYCLE, SRGB, new AffineTransform(0.9747923f, 0, 0, 1,
+                0.09689207f, -4)));
         g.fill(shape);
         transformations.offer(g.getTransform());
         g.transform(new AffineTransform(0.5065839f, 0, 0, 0.6464973f, 24.820896f, -0.4604517f));
@@ -532,9 +573,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(11.633744, 16.663357, 12.198016, 17.174227, 12.197592, 17.726992);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 15.667007446289062), 2.9610097f, new Point2D.Double(9.195677757263184, 16.975967407226562), new float[] {
-            0, 0.32142857f, 0.5f, 1 }, new Color[] {
-            WHITE, new Color(0xEBEBEB), new Color(0x909090), new Color(0xFAFAFA) }, NO_CYCLE, SRGB, new AffineTransform(2.1327367f, 0, 0, 1.114116f, -10.462615f, -1.2746685f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.23658275604248, 15.667007446289062),
+                2.9610097f, new Point2D.Double(9.195677757263184, 16.975967407226562), new float[] {
+                    0, 0.32142857f, 0.5f, 1 }, new Color[] {
+                    WHITE, new Color(0xEBEBEB), new Color(0x909090), new Color(0xFAFAFA) }, NO_CYCLE, SRGB,
+                new AffineTransform(2.1327367f, 0, 0, 1.114116f, -10.462615f, -1.2746685f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_24
@@ -588,9 +631,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(33.796764, 28.3125, 35.0, 29.515736, 35.0, 31.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.3125, 31), 2.6875f, new Point2D.Double(32.3125, 31), new float[] {
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.3125, 31), 2.6875f, new Point2D.Double(
+                32.3125, 31), new float[] {
             0, 0.5f, 1 }, new Color[] {
-            new Color(0x204A87, true), new Color(0x204A87, true), new Color(0x204A87) }, NO_CYCLE, SRGB, new AffineTransform(0.953696f, 0, 0, 0.953696f, 1.496198f, 1.4354241f)));
+            new Color(0x204A87, true), new Color(0x204A87, true), new Color(0x204A87) }, NO_CYCLE, SRGB,
+                new AffineTransform(0.953696f, 0, 0, 0.953696f, 1.496198f, 1.4354241f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_27_0
@@ -606,9 +651,11 @@ public class GnomeCameraPhotoIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(34.736107, 23.875, 35.6875, 24.826395, 35.6875, 26.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.10432434082031, 27.79938507080078), 4.125f, new Point2D.Double(32.10432434082031, 27.79938507080078), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xEDD400), new Color(0xEDD400, true) }, NO_CYCLE, SRGB, new AffineTransform(0.4953887f, 0, 0, 0.4953887f, 16.642078f, 14.429586f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(32.10432434082031, 27.79938507080078), 4.125f,
+                new Point2D.Double(32.10432434082031, 27.79938507080078), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xEDD400), new Color(0xEDD400, true) }, NO_CYCLE, SRGB, new AffineTransform(
+                        0.4953887f, 0, 0, 0.4953887f, 16.642078f, 14.429586f)));
         g.setStroke(new BasicStroke(1.4782609f, 0, 0, 10));
         g.draw(shape);
 

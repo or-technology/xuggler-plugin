@@ -1,6 +1,6 @@
 package de.or.xuggler.plugin;
 
-import de.or.dicom.viewer.control.ProgressStatusBarModel;
+import de.or.guiUtils.control.ProgressStatusBarModel;
 
 import java.awt.image.BufferedImage;
 import java.text.DateFormat;
@@ -228,9 +228,7 @@ public class VideoPlayer {
                     IPixelFormat.Type.BGR24, videoCoder.getWidth(), videoCoder.getHeight(),
                     videoCoder.getPixelType());
             if (resampler == null)
-            {
                 throw new RuntimeException("could not create color space resampler for: " + videoFilename);
-            }
         }
 
         packet = IPacket.make();
@@ -238,7 +236,6 @@ public class VideoPlayer {
         while (container.readNextPacket(packet) >= 0)
         {
             if (isStopped)
-            {
                 try
                 {
                     Thread.sleep(500);
@@ -247,10 +244,8 @@ public class VideoPlayer {
                 {
                     LOGGER.warn("", ex);
                 }
-            }
 
             if (packet.getStreamIndex() == audioStreamId)
-            {
                 try
                 {
                     handleAudioPacket();
@@ -258,10 +253,8 @@ public class VideoPlayer {
                 {
                     LOGGER.warn("", e);
                 }
-            } else if (packet.getStreamIndex() == videoStreamId)
-            {
+            else if (packet.getStreamIndex() == videoStreamId)
                 handleVideoPacket(resampler);
-            }
         }
         seekTo(0);
     }
@@ -286,15 +279,12 @@ public class VideoPlayer {
                     + coder.getTimeBase().getNumerator() + "/" + coder.getTimeBase().getDenominator());
 
             if (coder.getCodecType() == ICodec.Type.CODEC_TYPE_AUDIO)
-            {
                 LOGGER.info("Audio sample rate: " + coder.getSampleRate() + ", Audio channels   : "
                         + coder.getChannels() + ", Audio format     : " + coder.getSampleFormat());
-            } else if (coder.getCodecType() == ICodec.Type.CODEC_TYPE_VIDEO)
-            {
+            else if (coder.getCodecType() == ICodec.Type.CODEC_TYPE_VIDEO)
                 LOGGER.info("Video width     : " + coder.getWidth() + ", Video height    : "
                         + coder.getHeight() + ", Video format    : " + coder.getPixelType()
                         + ", Video frame-rate: " + coder.getFrameRate().getDouble());
-            }
         }
         LOGGER.info("Video duration (ms)    : "
                 + (container.getDuration() == Global.NO_PTS ? "unknown" : "" + container.getDuration() / 1000)
@@ -391,7 +381,6 @@ public class VideoPlayer {
                     + millisecondsTolerance;
 
             if (millisecondsToSleep > 0)
-            {
                 try
                 {
                     Thread.sleep(millisecondsToSleep / playbackMultiplier);
@@ -399,7 +388,6 @@ public class VideoPlayer {
                 {
                     return;
                 }
-            }
         }
     }
 

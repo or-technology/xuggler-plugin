@@ -19,7 +19,7 @@ package de.or.xuggler.plugin;
  * along with Xuggle-Xuggler-Main.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
 
-import de.or.utils.icons.IconRegistry;
+import de.or.guiUtils.icons.IconRegistry;
 import de.or.utils.logging.LoggingTools;
 import de.or.xuggler.plugin.icons.GnomeAudioVolumeHighIcon;
 import de.or.xuggler.plugin.icons.GnomeAudioVolumeLowIcon;
@@ -292,7 +292,7 @@ public class XugglerPlayer extends JPanel {
 
     public void showVideo(final String filename)
     {
-        this.videoFilename = filename;
+        videoFilename = filename;
         SwingUtilities.invokeLater(new Runnable() {
 
             public void run()

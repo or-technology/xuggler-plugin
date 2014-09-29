@@ -35,11 +35,10 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     public Version getPluginVersion()
     {
         if (pluginVersion == null)
-        {
-            PluginClassLoader pcl = PluginCentral.getPluginCentral()
+            try (PluginClassLoader pcl = PluginCentral.getPluginCentral()
                     .getPluginManager()
                     .getPluginClassLoader(getDescriptor());
-            try (InputStream is = pcl.getResourceAsStream(PLUGIN_XUGGLER_VERSION_PROPERTIES))
+                    InputStream is = pcl.getResourceAsStream(PLUGIN_XUGGLER_VERSION_PROPERTIES))
             {
                 pluginVersion = new Version(is);
                 is.close();
@@ -47,7 +46,6 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
             {
                 LOGGER.warn("", e);
             }
-        }
         return pluginVersion;
     }
 

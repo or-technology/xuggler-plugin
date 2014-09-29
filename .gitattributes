@@ -4,6 +4,7 @@
 .settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/plain
 /build.properties -text svneol=unset#text/plain
 /build.xml -text svneol=unset#text/plain
+/checksum.MD5 -text
 libs/commons-cli.jar -text
 libs/logback-classic.jar -text
 libs/logback-core.jar -text

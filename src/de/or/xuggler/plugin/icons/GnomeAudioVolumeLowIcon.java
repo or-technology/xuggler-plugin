@@ -5,8 +5,6 @@ import static java.awt.Color.WHITE;
 import static java.awt.MultipleGradientPaint.ColorSpaceType.SRGB;
 import static java.awt.MultipleGradientPaint.CycleMethod.NO_CYCLE;
 
-import de.or.utils.icons.FlamingoSvgJavaIcon;
-
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -22,7 +20,7 @@ import java.awt.geom.Point2D;
  * This class has been automatically generated using <a href="https://flamingo.dev.java.net">Flamingo SVG
  * transcoder</a>.
  */
-public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
+public class GnomeAudioVolumeLowIcon extends de.or.guiUtils.icons.FlamingoSvgJavaIcon {
 
     /**
      * Creates a new transcoded SVG image.
@@ -86,9 +84,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(17.308777, 33.327534, 22.097088, 34.910446, 22.097088, 36.863068);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(11.40209674835205, 36.863067626953125), 10.69499f, new Point2D.Double(11.40209674835205, 36.863067626953125), new float[] {
-            0, 1 }, new Color[] {
-            BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 0.330579f, 0, 24.67693f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(11.40209674835205, 36.863067626953125),
+                10.69499f, new Point2D.Double(11.40209674835205, 36.863067626953125), new float[] {
+                    0, 1 }, new Color[] {
+                    BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 0.330579f, 0,
+                        24.67693f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_0
@@ -140,13 +140,17 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(6.125, 15.500014);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(78.5, -4.006520748138428), new Point2D.Double(78.5, 14.00098991394043), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(78.5, -4.006520748138428), new Point2D.Double(
+                78.5, 14.00098991394043), new float[] {
             0, 0.25301206f, 1 }, new Color[] {
-            new Color(0xBABDB6), new Color(0xEEEEEC), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(0.90625f, 0, 0, 1, -65.921875f, 19)));
+            new Color(0xBABDB6), new Color(0xEEEEEC), new Color(0x555753) }, NO_CYCLE, SRGB,
+                new AffineTransform(0.90625f, 0, 0, 1, -65.921875f, 19)));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(80.0625, 14), new Point2D.Double(80.0625, -4.008772850036621), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(80.0625, 14), new Point2D.Double(80.0625,
+                -4.008772850036621), new float[] {
             0, 1 }, new Color[] {
-            new Color(0x555753), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(0.90625f, 0, 0, 1, -65.921875f, 19)));
+            new Color(0x555753), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(0.90625f, 0, 0,
+                1, -65.921875f, 19)));
         g.setStroke(new BasicStroke(1, 1, 0, 4));
         g.draw(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.6f * origAlpha));
@@ -168,9 +172,10 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(5.5, 14.5);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(3.844893217086792, 15.561476707458496), new Point2D.Double(3.844893217086792, 39.88433837890625), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(3.844893217086792, 15.561476707458496),
+                new Point2D.Double(3.844893217086792, 39.88433837890625), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(1.0577718f, 1, 0, 4));
         g.draw(shape);
 
@@ -188,9 +193,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(9.696925, 16.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(80.693359375, 31.561477661132812), new Point2D.Double(77.125, 14), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0x555753), new Color(0x888A85) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0, 1, -70, 2)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(80.693359375, 31.561477661132812),
+                new Point2D.Double(77.125, 14), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0x555753), new Color(0x888A85) }, NO_CYCLE, SRGB, new AffineTransform(1, 0, 0,
+                        1, -70, 2)));
         g.fill(shape);
 
         // _0_0_6
@@ -202,13 +209,17 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(17.811975, 9.5, 8.625, 14.772728, 8.625, 24.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.320398330688477, 18.817092895507812), 12.5f, new Point2D.Double(9.320398330688477, 18.817092895507812), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xEEEEEC), new Color(0x61635F) }, NO_CYCLE, SRGB, new AffineTransform(0.7132478f, 0.5221478f, -0.9280778f, 1.1784894f, 22.517143f, -6.7083f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(9.320398330688477, 18.817092895507812), 12.5f,
+                new Point2D.Double(9.320398330688477, 18.817092895507812), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xEEEEEC), new Color(0x61635F) }, NO_CYCLE, SRGB, new AffineTransform(
+                        0.7132478f, 0.5221478f, -0.9280778f, 1.1784894f, 22.517143f, -6.7083f)));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(7.75, 33.04657745361328), new Point2D.Double(4.643186569213867, 12.063652038574219), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(7.75, 33.04657745361328), new Point2D.Double(
+                4.643186569213867, 12.063652038574219), new float[] {
             0, 1 }, new Color[] {
-            new Color(0x555753), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(0.9114584f, 0, 0, 0.8787879f, 2.7005208f, 4.6666546f)));
+            new Color(0x555753), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(0.9114584f, 0, 0,
+                0.8787879f, 2.7005208f, 4.6666546f)));
         g.setStroke(new BasicStroke(1, 1, 0, 4));
         g.draw(shape);
         transformations.offer(g.getTransform());
@@ -223,9 +234,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(29.530207, 11.375, 33.0, 18.790283, 33.0, 27.9375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(23.98688316345215, 27.05316734313965), 7.75f, new Point2D.Double(23.98688316345215, 27.05316734313965), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(-0.2432942f, 0, 0, -1.2543129f, 25.2214f, 61.870636f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(23.98688316345215, 27.05316734313965), 7.75f,
+                new Point2D.Double(23.98688316345215, 27.05316734313965), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(-0.2432942f, 0,
+                        0, -1.2543129f, 25.2214f, 61.870636f)));
         g.fill(shape);
 
         g.setTransform(transformations.poll()); // _0_0_7
@@ -239,9 +252,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).lineTo(16.0, 13.375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(20.226221084594727, 20.333629608154297), new Point2D.Double(11.4375, 21.75), new float[] {
-            0, 0.5f, 1 }, new Color[] {
-            new Color(0xFFFFFF, true), WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform(0.6666667f, 0, 0, 1, 2, -1)));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(20.226221084594727, 20.333629608154297),
+                new Point2D.Double(11.4375, 21.75), new float[] {
+                    0, 0.5f, 1 }, new Color[] {
+                    new Color(0xFFFFFF, true), WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB,
+                new AffineTransform(0.6666667f, 0, 0, 1, 2, -1)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.5862069f * origAlpha));
         transformations.offer(g.getTransform());
@@ -260,9 +275,10 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(26.04527, 7.943735, 24.394999, 6.5, 22.8125, 6.5);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(12.197591781616211, 9.25974178314209), new Point2D.Double(12.197591781616211, 47.496856689453125), new float[] {
-            0, 1 }, new Color[] {
-            WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(12.197591781616211, 9.25974178314209),
+                new Point2D.Double(12.197591781616211, 47.496856689453125), new float[] {
+                    0, 1 }, new Color[] {
+                    WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(1.1273447f, 1, 0, 4));
         g.draw(shape);
 
@@ -280,13 +296,16 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(29.530207, 11.375, 33.0, 18.790283, 33.0, 27.9375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(23.164974212646484, 30.232789993286133), 8.189013f, new Point2D.Double(23.164974212646484, 30.232789993286133), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xBABDB6), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(1.7346265f, -0.1698771f, 0.327755f, 3.6175227f, -27.429342f, -73.69679f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(23.164974212646484, 30.232789993286133),
+                8.189013f, new Point2D.Double(23.164974212646484, 30.232789993286133), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xBABDB6), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(
+                        1.7346265f, -0.1698771f, 0.327755f, 3.6175227f, -27.429342f, -73.69679f)));
         g.fill(shape);
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(33.43055725097656, 45.052154541015625), new Point2D.Double(33.43055725097656, 0.3103710114955902), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0x555753), new Color(0xD3D7CF) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(33.43055725097656, 45.052154541015625),
+                new Point2D.Double(33.43055725097656, 0.3103710114955902), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0x555753), new Color(0xD3D7CF) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.8324051f, 1, 0, 4));
         g.draw(shape);
 
@@ -301,9 +320,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(19.233185, 19.5, 21.616117, 21.51601, 21.616117, 24.000008);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(20.883899688720703, 20.434255599975586), 3.9999843f, new Point2D.Double(20.883899688720703, 20.434255599975586), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xBABDB6), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(1.3093938f, 0, 0, 1.5604932f, -8.388638f, -9.784483f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(20.883899688720703, 20.434255599975586),
+                3.9999843f, new Point2D.Double(20.883899688720703, 20.434255599975586), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xBABDB6), new Color(0x555753) }, NO_CYCLE, SRGB, new AffineTransform(
+                        1.3093938f, 0, 0, 1.5604932f, -8.388638f, -9.784483f)));
         g.fill(shape);
         g.setPaint(new Color(0x555753));
         g.setStroke(new BasicStroke(1, 1, 0, 4));
@@ -348,9 +369,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(18.719631, 8.76565, 20.577726, 7.0, 22.5, 7.0);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(30.68531608581543, 42.26142501831055), 8.22791f, new Point2D.Double(30.68531608581543, 42.26142501831055), new float[] {
-            0, 1 }, new Color[] {
-            new Color(0xEEEEEC), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(3.9866297f, 0.1169977f, 0, -2.530036f, -104.62676f, 112.74341f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(30.68531608581543, 42.26142501831055),
+                8.22791f, new Point2D.Double(30.68531608581543, 42.26142501831055), new float[] {
+                    0, 1 }, new Color[] {
+                    new Color(0xEEEEEC), new Color(0xBABDB6) }, NO_CYCLE, SRGB, new AffineTransform(
+                        3.9866297f, 0.1169977f, 0, -2.530036f, -104.62676f, 112.74341f)));
         g.fill(shape);
         g.setComposite(AlphaComposite.getInstance(3, 0.36637932f * origAlpha));
         transformations.offer(g.getTransform());
@@ -365,9 +388,10 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(29.530207, 11.375, 33.0, 18.790283, 33.0, 27.9375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(23.238182067871094, 12.15865707397461), new Point2D.Double(29.892562866210938, 26.354360580444336), new float[] {
-            0, 1 }, new Color[] {
-            BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform()));
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(23.238182067871094, 12.15865707397461),
+                new Point2D.Double(29.892562866210938, 26.354360580444336), new float[] {
+                    0, 1 }, new Color[] {
+                    BLACK, new Color(0x0, true) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(1.0541995f, 1, 0, 4));
         g.draw(shape);
 
@@ -402,7 +426,8 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(29.530207, 11.375, 33.0, 18.790283, 33.0, 27.9375);
         ((GeneralPath) shape).closePath();
 
-        g.setPaint(new LinearGradientPaint(new Point2D.Double(17.5, 25.58741569519043), new Point2D.Double(28.55514144897461, 25.699325561523438), new float[] {
+        g.setPaint(new LinearGradientPaint(new Point2D.Double(17.5, 25.58741569519043), new Point2D.Double(
+                28.55514144897461, 25.699325561523438), new float[] {
             0, 1 }, new Color[] {
             WHITE, new Color(0xFFFFFF, true) }, NO_CYCLE, SRGB, new AffineTransform()));
         g.setStroke(new BasicStroke(0.90347946f, 1, 0, 4));
@@ -439,9 +464,11 @@ public class GnomeAudioVolumeLowIcon extends FlamingoSvgJavaIcon {
         ((GeneralPath) shape).curveTo(61.050823, 28.375887, 62.5, 25.606104, 62.5, 22.5);
         ((GeneralPath) shape).curveTo(62.5, 19.560795, 61.188423, 16.939552, 59.125, 15.15625);
 
-        g.setPaint(new RadialGradientPaint(new Point2D.Double(60.640625, 22.65625), 2.6194003f, new Point2D.Double(60.640625, 22.65625), new float[] {
-            0, 0.6f, 1 }, new Color[] {
-            new Color(0x729FCF), new Color(0x729FCF), new Color(0x729FCF, true) }, NO_CYCLE, SRGB, new AffineTransform(2.1454532f, 0, 0, 3.0191636f, -69.461f, -45.746674f)));
+        g.setPaint(new RadialGradientPaint(new Point2D.Double(60.640625, 22.65625), 2.6194003f,
+                new Point2D.Double(60.640625, 22.65625), new float[] {
+                    0, 0.6f, 1 }, new Color[] {
+                    new Color(0x729FCF), new Color(0x729FCF), new Color(0x729FCF, true) }, NO_CYCLE, SRGB,
+                new AffineTransform(2.1454532f, 0, 0, 3.0191636f, -69.461f, -45.746674f)));
         g.setStroke(new BasicStroke(1.5200506f, 1, 1, 4));
         g.draw(shape);
 

@@ -3,11 +3,9 @@
  */
 package de.or.xuggler.plugin.tools;
 
-import de.or.dicom.viewer.control.ProgressStatusBarModel;
 import de.or.dicom.viewer.control.ViewerFrameManager;
 import de.or.dicom.viewer.data.DisplayableUnit;
 import de.or.dicom.viewer.data.Instance;
-import de.or.dicom.viewer.dialog.OnTopDialog;
 import de.or.dicom.viewer.dialog.TargetPanel;
 import de.or.dicom.viewer.displayable.DefaultSelectionModel;
 import de.or.dicom.viewer.displayable.ImageLayeredData;
@@ -18,8 +16,10 @@ import de.or.dicom.viewer.image.StandardImageEncoder;
 import de.or.dicom.viewer.tasks.ExportTask;
 import de.or.dicom.viewer.tools.ToolDescription;
 import de.or.dicom.viewer.tools.inout.AbstractExportTool;
+import de.or.guiUtils.control.ProgressStatusBarModel;
+import de.or.guiUtils.dialog.OnTopDialog;
+import de.or.guiUtils.icons.IconCreator;
 import de.or.utils.config.LocalesConfig;
-import de.or.utils.icons.IconCreator;
 import de.or.xuggler.plugin.icons.UbuntuStudioIconsVideoProductionIcon;
 
 import java.awt.Dimension;
