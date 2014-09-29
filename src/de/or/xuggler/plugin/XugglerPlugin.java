@@ -6,7 +6,6 @@ import de.or.plugin.PluginCentral;
 import de.or.plugin.core.DisplayPlugin;
 import de.or.plugin.core.ToolPlugin;
 import de.or.plugin.images.DisplayComponentContainer;
-import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
 import de.or.xuggler.plugin.tools.ExportDicomLoop;
@@ -61,7 +60,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
         if (LOGGER.isDebugEnabled())
             logInstalledCodes();
         VideoPluginRegistry.getInstance().addPlugin(this);
-        ToolPluginRegistry.getInstance().addPlugin(this);
+        // ToolPluginRegistry.getInstance().addPlugin(this);
     }
 
     protected static void logInstalledCodes()
@@ -76,7 +75,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     protected void doStop() throws Exception
     {
         VideoPluginRegistry.getInstance().removePlugin(this);
-        ToolPluginRegistry.getInstance().removePlugin(this);
+        // ToolPluginRegistry.getInstance().removePlugin(this);
     }
 
     @Override
