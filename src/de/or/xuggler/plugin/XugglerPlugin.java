@@ -101,8 +101,9 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     {
         try
         {
-            final Class<?> loadedClass = getClass().getClassLoader().loadClass(
-                    "de.or.xuggler.plugin.XugglerContainer.XugglerContainer");
+            final ClassLoader cl = getClass().getClassLoader();
+            System.out.println(cl);
+            final Class<?> loadedClass = cl.loadClass("de.or.xuggler.plugin.XugglerContainer");
             final Object newInstance = loadedClass.newInstance();
             if (newInstance instanceof DisplayComponentContainer)
             {
