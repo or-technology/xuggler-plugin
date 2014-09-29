@@ -1,10 +1,6 @@
 package de.or.xuggler.plugin;
 
 import de.or.dicom.dcm.codec.DcmDataObject;
-import de.or.dicom.viewer.data.DisplayableUnit;
-import de.or.dicom.viewer.displaymodel.MatrixModel;
-import de.or.dicom.viewer.navigation.EmptyNavigator;
-import de.or.dicom.viewer.navigation.INavigator;
 import de.or.dicom.viewer.tools.Tool;
 import de.or.plugin.PluginCentral;
 import de.or.plugin.core.DisplayPlugin;
@@ -15,12 +11,7 @@ import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
 import de.or.xuggler.plugin.tools.ExportDicomLoop;
 
-import java.awt.Component;
-import java.awt.Cursor;
 import java.io.InputStream;
-import java.util.Properties;
-
-import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
 import org.java.plugin.Plugin;
@@ -108,6 +99,22 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     @Override
     public DisplayComponentContainer createDisplayComponentContainer()
     {
+        try
+        {
+            final Class<?> loadedClass = getClass().getClassLoader().loadClass(
+                    "de.or.xuggler.plugin.XugglerContainer.XugglerContainer");
+            final Object newInstance = loadedClass.newInstance();
+            if (newInstance instanceof DisplayComponentContainer)
+            {
+                DisplayComponentContainer dcc = (DisplayComponentContainer) newInstance;
+                return dcc;
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e)
+        {
+            LOGGER.warn("", e);
+
+        }
+
         return new XugglerContainer();
     }
 
