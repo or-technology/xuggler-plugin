@@ -99,23 +99,6 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     @Override
     public DisplayComponentContainer createDisplayComponentContainer()
     {
-        try
-        {
-            final ClassLoader cl = getClass().getClassLoader();
-            System.out.println(cl);
-            final Class<?> loadedClass = cl.loadClass("de/or/xuggler/plugin/XugglerContainer");
-            final Object newInstance = loadedClass.newInstance();
-            if (newInstance instanceof DisplayComponentContainer)
-            {
-                DisplayComponentContainer dcc = (DisplayComponentContainer) newInstance;
-                return dcc;
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e)
-        {
-            LOGGER.warn("", e);
-
-        }
-
         return new XugglerContainer();
     }
 
