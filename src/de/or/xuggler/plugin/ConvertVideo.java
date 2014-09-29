@@ -19,16 +19,15 @@ public class ConvertVideo extends JPanel {
             String filename = args[0];
             try
             {
-
-                // TODO Auto-generated method stub
-
                 IMediaReader reader = ToolFactory.makeReader(filename);
                 reader.addListener(ToolFactory.makeWriter(args[1], reader));
 
                 System.out.println("Video wird konvertiert");
 
+                int i = 0;
                 while (reader.readPacket() == null)
-                    ;
+                    i++;
+                System.out.println("read " + i + " packets, conversion finished");
 
             } catch (Exception e)
             {
