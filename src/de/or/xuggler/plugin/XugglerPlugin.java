@@ -1,6 +1,10 @@
 package de.or.xuggler.plugin;
 
 import de.or.dicom.dcm.codec.DcmDataObject;
+import de.or.dicom.viewer.data.DisplayableUnit;
+import de.or.dicom.viewer.displaymodel.MatrixModel;
+import de.or.dicom.viewer.navigation.EmptyNavigator;
+import de.or.dicom.viewer.navigation.INavigator;
 import de.or.dicom.viewer.tools.Tool;
 import de.or.plugin.PluginCentral;
 import de.or.plugin.core.DisplayPlugin;
@@ -11,7 +15,12 @@ import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
 import de.or.xuggler.plugin.tools.ExportDicomLoop;
 
+import java.awt.Component;
+import java.awt.Cursor;
 import java.io.InputStream;
+import java.util.Properties;
+
+import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
 import org.java.plugin.Plugin;
@@ -96,10 +105,56 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
         return false;
     }
 
+    protected class TestContainer extends JPanel implements DisplayComponentContainer {
+
+        public void setDisplayableUnit(DisplayableUnit unit)
+        {
+            // TODO Auto-generated method stub
+
+        }
+
+        public INavigator createNavigator(MatrixModel model)
+        {
+            // TODO Auto-generated method stub
+            return new EmptyNavigator();
+        }
+
+        public Component getDisplayComponent()
+        {
+            // TODO Auto-generated method stub
+            return this;
+        }
+
+        public void setActive(boolean active)
+        {
+            // TODO Auto-generated method stub
+
+        }
+
+        public void setToolCursor(Cursor cursor)
+        {
+            // TODO Auto-generated method stub
+
+        }
+
+        public Properties getProperties()
+        {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        public void setProperties(Properties p)
+        {
+            // TODO Auto-generated method stub
+
+        }
+
+    }
+
     @Override
     public DisplayComponentContainer createDisplayComponentContainer()
     {
-        return new CopyOfXugglerContainer();
+        return new TestContainer();
     }
 
     public String getToolGroupID()
