@@ -61,8 +61,8 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
         getContentPane().add(getMainPanel());
         pack();
         setLocationRelativeTo(frame);
-        new FontChanger(this, FontConfig.getFontWidthHeight(12), FontConfig.getFontWidthHeight(12)
-                .deriveFont(Font.BOLD));
+        new FontChanger(FontConfig.getFontWidthHeight(12), FontConfig.getFontWidthHeight(12).deriveFont(
+                Font.BOLD)).startIteration(this);
         addDialogListener();
     }
 
