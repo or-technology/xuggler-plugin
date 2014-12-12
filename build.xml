@@ -4,6 +4,8 @@
           target: deploy              
          ================================= -->
 
+	<property name="SVN_REGEXP" value="^.*code/"/>
+	
 	<property environment="env" />
 
 	<import file="lib/build_includes/plugin_include.xml" />
