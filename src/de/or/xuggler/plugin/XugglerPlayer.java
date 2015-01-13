@@ -42,6 +42,8 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
@@ -89,6 +91,15 @@ public class XugglerPlayer extends JPanel {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.add(createVolumeSliderPanel(), BorderLayout.EAST);
         panel.add(videoProgress, BorderLayout.CENTER);
+        videoProgress.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseReleased(MouseEvent e)
+            {
+                final double seekToPercentagePos = 100d * e.getX() / videoProgress.getSize().getWidth();
+                videoPlayer.seekTo((int) seekToPercentagePos);
+            }
+        });
 
         JPanel controlPanel = new JPanel(new BorderLayout(10, 10));
         controlPanel.add(createPlayButton(), BorderLayout.WEST);

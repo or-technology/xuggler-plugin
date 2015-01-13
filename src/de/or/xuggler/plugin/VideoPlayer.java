@@ -3,9 +3,6 @@ package de.or.xuggler.plugin;
 import de.or.guiUtils.control.ProgressStatusBarModel;
 
 import java.awt.image.BufferedImage;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.swing.DefaultBoundedRangeModel;
@@ -134,26 +131,18 @@ public class VideoPlayer {
         firstTimestampInStream = Global.NO_PTS;
     }
 
-    private String convertTime(long total)
-    {
-        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-
-        String timer = "";
-        if (picture == null)
-            timer = formatter.format(new Date(total)) + " ";
-        else
-            timer = formatter.format(new Date(total)) + " ";
-
-        return timer;
-    }
-
     public void updateTimeModel()
     {
         if (picture != null)
         {
-            timeModel.setString(picture.getFormattedTimeStamp() + " [" + picture.getTimeStamp() / 1000 + "] "
-                    + convertTime(container.getDuration() / 1000));
-            timeModel.setValue((int) (picture.getTimeStamp() * 100l / container.getDuration()));
+            long currentTime = picture.getTimeStamp();
+            long duration = container.getDuration();
+            timeModel.setString(picture.getFormattedTimeStamp());
+            if (duration > 0)
+            {
+                int currentProgressValue = (int) (100 * currentTime / duration);
+                timeModel.setValue(currentProgressValue);
+            }
         }
     }
 
@@ -176,8 +165,6 @@ public class VideoPlayer {
 
         if (container.open(videoFilename, IContainer.Type.READ, null) < 0)
             throw new IllegalArgumentException("could not open file: " + videoFilename);
-
-        timeModel.setString("" + convertTime(container.getDuration() / 1000000));
 
         int numStreams = container.getNumStreams();
 
