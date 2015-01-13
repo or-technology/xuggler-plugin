@@ -38,6 +38,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
 
+import org.apache.log4j.Logger;
+
 import com.xuggle.xuggler.ICodec;
 
 /**
@@ -49,6 +51,8 @@ import com.xuggle.xuggler.ICodec;
  *         Copyright Oehm und Rehbein GmbH<BR>
  */
 public class ExportDicomLoopDialog extends StandardSelectionDialog {
+
+    private static final Logger LOGGER = Logger.getLogger(ExportDicomLoopDialog.class);
 
     TargetPanel targetPanel;
 
@@ -62,7 +66,7 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
         pack();
         setLocationRelativeTo(frame);
         new FontChanger(FontConfig.getFontWidthHeight(12), FontConfig.getFontWidthHeight(12).deriveFont(
-                Font.BOLD)).startIteration(this);
+                Font.BOLD)).execute(this);
         addDialogListener();
     }
 

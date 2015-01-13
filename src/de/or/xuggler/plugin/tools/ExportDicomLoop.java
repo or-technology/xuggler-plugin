@@ -90,7 +90,7 @@ public class ExportDicomLoop extends AbstractExportTool {
             {
                 String iconSource = getDescription().getIconSource();
                 final ProgressStatusBarModel progress = ViewerFrameManager.getInstance().createProgressBars(
-                        new IconCreator(iconSource, getClass().getClassLoader()));
+                        new IconCreator(iconSource, ExportDicomLoop.class.getClassLoader()));
                 ExportVideoFormat format = dialog.getSelectedCodec();
 
                 try

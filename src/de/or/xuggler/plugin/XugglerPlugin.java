@@ -6,6 +6,7 @@ import de.or.plugin.PluginCentral;
 import de.or.plugin.core.DisplayPlugin;
 import de.or.plugin.core.ToolPlugin;
 import de.or.plugin.images.DisplayComponentContainer;
+import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
 import de.or.utils.Version;
 import de.or.xuggler.plugin.tools.ExportDicomLoop;
@@ -34,10 +35,11 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     public Version getPluginVersion()
     {
         if (pluginVersion == null)
-            try (PluginClassLoader pcl = PluginCentral.getPluginCentral()
+        {
+            PluginClassLoader pcl = PluginCentral.getPluginCentral()
                     .getPluginManager()
                     .getPluginClassLoader(getDescriptor());
-                    InputStream is = pcl.getResourceAsStream(PLUGIN_XUGGLER_VERSION_PROPERTIES))
+            try (InputStream is = pcl.getResourceAsStream(PLUGIN_XUGGLER_VERSION_PROPERTIES))
             {
                 pluginVersion = new Version(is);
                 is.close();
@@ -45,6 +47,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
             {
                 LOGGER.warn("", e);
             }
+        }
         return pluginVersion;
     }
 
@@ -60,7 +63,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
         if (LOGGER.isDebugEnabled())
             logInstalledCodes();
         VideoPluginRegistry.getInstance().addPlugin(this);
-        // ToolPluginRegistry.getInstance().addPlugin(this);
+        ToolPluginRegistry.getInstance().addPlugin(this);
     }
 
     protected static void logInstalledCodes()
@@ -75,7 +78,7 @@ public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
     protected void doStop() throws Exception
     {
         VideoPluginRegistry.getInstance().removePlugin(this);
-        // ToolPluginRegistry.getInstance().removePlugin(this);
+        ToolPluginRegistry.getInstance().removePlugin(this);
     }
 
     @Override
