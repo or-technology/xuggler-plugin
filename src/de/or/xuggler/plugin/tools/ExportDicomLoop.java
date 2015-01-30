@@ -6,6 +6,7 @@ package de.or.xuggler.plugin.tools;
 import de.or.dicom.viewer.control.ViewerFrameManager;
 import de.or.dicom.viewer.data.DisplayableUnit;
 import de.or.dicom.viewer.data.Instance;
+import de.or.dicom.viewer.dialog.ExportDialog;
 import de.or.dicom.viewer.dialog.TargetPanel;
 import de.or.dicom.viewer.displayable.DefaultSelectionModel;
 import de.or.dicom.viewer.displayable.ImageLayeredData;
@@ -142,7 +143,7 @@ public class ExportDicomLoop extends AbstractExportTool {
     }
 
     @Override
-    public ActionListener createConfigActionListener(final TargetPanel targetPanel, final OnTopDialog dialog)
+    public ActionListener createConfigActionListener(final TargetPanel targetPanel, final ExportDialog dialog)
     {
         return new ActionListener() {
 

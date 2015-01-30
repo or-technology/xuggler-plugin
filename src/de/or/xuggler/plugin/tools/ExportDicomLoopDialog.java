@@ -4,8 +4,8 @@
 package de.or.xuggler.plugin.tools;
 
 import de.or.dicom.viewer.control.FontChanger;
+import de.or.dicom.viewer.dialog.ExportDialog;
 import de.or.dicom.viewer.dialog.SelectionPanel;
-import de.or.dicom.viewer.dialog.StandardSelectionDialog;
 import de.or.dicom.viewer.dialog.TargetPanel;
 import de.or.dicom.viewer.tasks.ExportTask;
 import de.or.guiUtils.VerticalLayout;
@@ -50,7 +50,7 @@ import com.xuggle.xuggler.ICodec;
  *         Package: de.or.xuggler.plugin.tools<BR>
  *         Copyright Oehm und Rehbein GmbH<BR>
  */
-public class ExportDicomLoopDialog extends StandardSelectionDialog {
+public class ExportDicomLoopDialog extends ExportDialog {
 
     private static final Logger LOGGER = Logger.getLogger(ExportDicomLoopDialog.class);
 
@@ -74,6 +74,7 @@ public class ExportDicomLoopDialog extends StandardSelectionDialog {
 
     private final ExportDicomLoop exportDicomLoop;
 
+    @Override
     protected ExportTask getExportTask()
     {
         if (exportTask == null)
