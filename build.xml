@@ -4,10 +4,65 @@
           target: deploy              
          ================================= -->
 
-	<property name="SVN_REGEXP" value="^.*code/"/>
-	
+	<property name="SVN_REGEXP" value="^.*code/" />
+
 	<property environment="env" />
 
 	<import file="lib/build_includes/plugin_include.xml" />
+
+	<target name="compile">
+		<javac srcdir="${basedir}/src" destdir="${basedir}/bin" classpath="${basedir}/lib/foreign/*.*" debug="on" />
+	</target>
+
+	<target name="plugin_zip">
+		<copyfile src="libs/xuggle-xuggler-5.4_LICENSE.html" dest="libs/5.4/xuggle-xuggler-5.4_LICENSE.html" />
+		<zip destfile="${basedir}/build/${plugin.name}.zip" duplicate="preserve">
+			<mappedresources>
+				<fileset refid="filesBin" />
+			</mappedresources>
+			<mappedresources>
+				<fileset refid="filesSrc" />
+			</mappedresources>
+			<fileset refid="filesPlugin" />
+			<fileset refid="filesProperties" />
+			<fileset refid="filesAddLibs" />
+		</zip>
+		<signjar jar="${basedir}/build/${plugin.name}.zip" alias="1" keystore="./lib/build_includes/certificate/OS201403107153.pfx" storepass="or18057orhro" storetype="pkcs12" />
+		<delete file="libs/5.4/xuggle-xuggler-5.4_LICENSE.html" failonerror="false" />
+	</target>
+
+	<target name="zip1" depends="compile">
+		<zip destfile="./build/de.or.xuggler.plugin.zip">
+			<fileset dir="${basedir}/bin" />
+			<fileset file="${basedir}/plugin.xml" />
+			<fileset dir="libs">
+				<include name="**/*.jar" />
+				<include name="**/*.dll" />
+			</fileset>
+		</zip>
+	</target>
+
+	<target name="compileEclipseWorkspace">
+		<javac srcdir="./src" destdir="./bin" classpath="./lib/head/*.*" debug="on" compiler="jikes" />
+	</target>
+
+	<target name="zip" depends="compileEclipseWorkspace">
+		<zip destfile="./build/de.or.xuggler.plugin.zip">
+			<fileset dir="${basedir}/bin" />
+			<fileset file="${basedir}/plugin.xml" />
+			<fileset dir="${basedir}/src/">
+				<include name="*.properties" />
+				<exclude name="**/.svn/**/*.*" />
+			</fileset>
+			<fileset dir=".">
+				<include name="libs/**/*.jar" />
+				<include name="libs/**/*.dll" />
+				<exclude name="libs/**/.svn/**/*.*" />
+			</fileset>
+		</zip>
+		<copy file="./build/de.or.xuggler.plugin.zip" tofile="../DICOMDIR-Viewer (trunk)/plugins/ViewerPlugins/de.or.xuggler.plugin.zip">
+		</copy>
+	</target>
+
 
 </project>

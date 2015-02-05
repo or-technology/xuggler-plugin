@@ -6,9 +6,14 @@
 /build.xml -text svneol=unset#text/plain
 /checksum.MD5 -text
 libs/commons-cli.jar -text
+libs/commons-cli_LICENSE.txt -text svneol=unset#text/plain
+libs/commons-cli_NOTICE.txt -text svneol=unset#text/plain
 libs/logback-classic.jar -text
 libs/logback-core.jar -text
+libs/logback-core_LICENSE.txt -text svneol=unset#text/plain
 libs/slf4j-api.jar -text
+libs/slf4j-api_LICENSE.txt -text svneol=unset#text/plain
+libs/xuggle-xuggler-5.4_LICENSE.html -text svneol=unset#text/plain
 /plugin.xml -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/ConvertVideo.java -text svneol=unset#text/plain
 src/de/or/xuggler/plugin/DecodeAndCaptureFrames.java -text svneol=unset#text/plain
