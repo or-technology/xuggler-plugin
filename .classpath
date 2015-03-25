@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry combineaccessrules="false" kind="src" path="/DICOMDIR-Viewer (trunk)"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/foreign/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="lib/ViewerLibs/DicomLib.jar"/>
-	<classpathentry kind="lib" path="lib/ViewerLibs/GuiUtils.jar"/>
+	<classpathentry kind="src" path="/DicomLib (head)"/>
+	<classpathentry kind="src" path="/GuiUtils (head)"/>
 	<classpathentry kind="lib" path="libs/5.4/xuggle-xuggler-5.4.jar"/>
 	<classpathentry kind="lib" path="libs/5.4/xuggle-xuggler-noarch-5.4.jar"/>
 	<classpathentry kind="lib" path="libs/commons-cli.jar"/>
@@ -13,8 +12,9 @@
 	<classpathentry kind="lib" path="libs/logback-core.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api.jar"/>
 	<classpathentry kind="lib" path="lib/foreign/jpf.jar"/>
-	<classpathentry kind="lib" path="lib/ViewerLibs/util.jar"/>
+	<classpathentry kind="src" path="/util (head)"/>
 	<classpathentry kind="lib" path="lib/foreign/jdom-2.0.5.jar"/>
-	<classpathentry kind="lib" path="lib/ViewerLibs/ImageProcessing.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/DICOMDIR-Viewer (trunk)"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ImageDisplay (head)"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
