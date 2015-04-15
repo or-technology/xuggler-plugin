@@ -4,7 +4,6 @@
 .settings/org.eclipse.jdt.core.prefs -text svneol=unset#text/plain
 /build.properties -text svneol=unset#text/plain
 /build.xml -text svneol=unset#text/plain
-/checksum.MD5 -text
 libs/commons-cli.jar -text
 libs/commons-cli_LICENSE.txt -text svneol=unset#text/plain
 libs/commons-cli_NOTICE.txt -text svneol=unset#text/plain
