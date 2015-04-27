@@ -3,8 +3,8 @@ package de.or.xuggler.plugin;
 import de.or.dicom.dcm.codec.DcmDataObject;
 import de.or.dicom.viewer.tools.Tool;
 import de.or.plugin.PluginCentral;
-import de.or.plugin.core.DisplayPlugin;
 import de.or.plugin.core.ToolPlugin;
+import de.or.plugin.core.VideoPlugin;
 import de.or.plugin.images.DisplayComponentContainer;
 import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
@@ -19,7 +19,7 @@ import org.java.plugin.PluginClassLoader;
 
 import com.xuggle.xuggler.ICodec;
 
-public class XugglerPlugin extends Plugin implements DisplayPlugin, ToolPlugin {
+public class XugglerPlugin extends Plugin implements VideoPlugin, ToolPlugin {
 
     public static final String PLUGIN_XUGGLER_VERSION_PROPERTIES = "dicomPACSXugglerVersion.properties";
 
