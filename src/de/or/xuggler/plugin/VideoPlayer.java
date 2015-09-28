@@ -134,7 +134,7 @@ public class VideoPlayer {
 
     public void updateTimeModel()
     {
-        if (picture != null)
+        if (picture != null && container != null)
         {
             long currentTime = picture.getTimeStamp();
             long duration = container.getDuration();
