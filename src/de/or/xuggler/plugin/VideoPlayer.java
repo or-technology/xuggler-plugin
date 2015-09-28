@@ -129,6 +129,7 @@ public class VideoPlayer {
     public void resetDelay()
     {
         firstTimestampInStream = Global.NO_PTS;
+        seekTo(0);
     }
 
     public void updateTimeModel()
@@ -225,9 +226,9 @@ public class VideoPlayer {
 
         packet = IPacket.make();
 
-        while (container != null && videoCoder != null)
+        while (videoCoder != null)
         {
-            while (container.readNextPacket(packet) >= 0)
+            while (videoCoder != null && container != null && container.readNextPacket(packet) >= 0)
             {
                 while (paused)
                     Thread.sleep(100);
@@ -249,7 +250,8 @@ public class VideoPlayer {
 
                     }
             }
-            seekTo(0);
+            if (container != null)
+                seekTo(0);
         }
     }
 
@@ -283,9 +285,10 @@ public class VideoPlayer {
         LOGGER.info("Video duration (ms)    : "
                 + (container.getDuration() == Global.NO_PTS ? "unknown" : "" + container.getDuration() / 1000)
                 + ", Video start time (ms)  : "
-                + (container.getStartTime() == Global.NO_PTS ? "unknown" : "" + container.getStartTime()
-                        / 1000) + ", Video file size (bytes): " + container.getFileSize()
-                + ", Video bit rate         : " + container.getBitRate());
+                + (container.getStartTime() == Global.NO_PTS ? "unknown"
+                        : "" + container.getStartTime() / 1000)
+                + ", Video file size (bytes): " + container.getFileSize() + ", Video bit rate         : "
+                + container.getBitRate());
 
         LOGGER.info("VIDEO CODER INFO: " + ", Video timebase  : " + videoCoder.getTimeBase()
                 + ", Video tolerance : " + videoCoder.getBitRateTolerance() + ", Video channels  : "
@@ -296,7 +299,8 @@ public class VideoPlayer {
 
     protected void handleVideoPacket(IVideoResampler resampler)
     {
-        picture = IVideoPicture.make(videoCoder.getPixelType(), videoCoder.getWidth(), videoCoder.getHeight());
+        picture = IVideoPicture.make(videoCoder.getPixelType(), videoCoder.getWidth(),
+                videoCoder.getHeight());
         int offset = 0;
         while (offset < packet.getSize())
         {
@@ -318,8 +322,8 @@ public class VideoPlayer {
                         throw new RuntimeException("could not resample video from: " + videoFilename);
                 }
                 if (newPic.getPixelType() != IPixelFormat.Type.BGR24)
-                    throw new RuntimeException("could not decode video as BGR 24 bit data in: "
-                            + videoFilename);
+                    throw new RuntimeException(
+                            "could not decode video as BGR 24 bit data in: " + videoFilename);
                 currentTimestamp = picture.getTimeStamp();
                 delay();
                 updatePanel(newPic);
