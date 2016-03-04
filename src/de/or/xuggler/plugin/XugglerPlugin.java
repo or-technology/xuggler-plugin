@@ -8,6 +8,7 @@ import de.or.plugin.core.VideoPlugin;
 import de.or.plugin.images.DisplayComponentContainer;
 import de.or.plugin.registry.ToolPluginRegistry;
 import de.or.plugin.registry.VideoPluginRegistry;
+import de.or.plugin.registry.VideoPreviewImageCreatorRegistry;
 import de.or.utils.Version;
 import de.or.xuggler.plugin.tools.ExportDicomLoop;
 
@@ -27,6 +28,8 @@ public class XugglerPlugin extends Plugin implements VideoPlugin, ToolPlugin {
 
     protected Version pluginVersion = null;
 
+    private VideoPreviewImageCreatorFactory factory;
+
     public XugglerPlugin()
     {
         super();
@@ -36,9 +39,8 @@ public class XugglerPlugin extends Plugin implements VideoPlugin, ToolPlugin {
     {
         if (pluginVersion == null)
         {
-            PluginClassLoader pcl = PluginCentral.getPluginCentral()
-                    .getPluginManager()
-                    .getPluginClassLoader(getDescriptor());
+            PluginClassLoader pcl = PluginCentral.getPluginCentral().getPluginManager().getPluginClassLoader(
+                    getDescriptor());
             try (InputStream is = pcl.getResourceAsStream(PLUGIN_XUGGLER_VERSION_PROPERTIES))
             {
                 pluginVersion = new Version(is);
@@ -64,6 +66,8 @@ public class XugglerPlugin extends Plugin implements VideoPlugin, ToolPlugin {
             logInstalledCodes();
         VideoPluginRegistry.getInstance().addPlugin(this);
         ToolPluginRegistry.getInstance().addPlugin(this);
+        factory = new VideoPreviewImageCreatorFactory();
+        VideoPreviewImageCreatorRegistry.getInstance().addCreator(factory);
     }
 
     protected static void logInstalledCodes()
@@ -79,6 +83,8 @@ public class XugglerPlugin extends Plugin implements VideoPlugin, ToolPlugin {
     {
         VideoPluginRegistry.getInstance().removePlugin(this);
         ToolPluginRegistry.getInstance().removePlugin(this);
+        if (factory != null)
+            VideoPreviewImageCreatorRegistry.getInstance().removeCreator(factory);
     }
 
     @Override

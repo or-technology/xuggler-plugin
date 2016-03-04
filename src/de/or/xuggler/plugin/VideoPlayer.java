@@ -251,7 +251,10 @@ public class VideoPlayer {
                     }
             }
             if (container != null)
+            {
+                startTime = System.currentTimeMillis();
                 seekTo(0);
+            }
         }
     }
 
@@ -265,9 +268,8 @@ public class VideoPlayer {
             IStreamCoder coder = stream.getStreamCoder();
 
             LOGGER.info("stream    : " + (i + 1) + ", type      : " + coder.getCodecType() + ", codec     : "
-                    + coder.getCodecID() + ", frames    : "
-                    + (stream.getDuration() == Global.NO_PTS ? "unknown" : "" + stream.getDuration())
-                    + ", start time: "
+                    + coder.getCodecID() + ", frames    : " + (stream.getDuration() == Global.NO_PTS
+                            ? "unknown" : "" + stream.getDuration()) + ", start time: "
                     + (container.getStartTime() == Global.NO_PTS ? "unknown" : "" + stream.getStartTime())
                     + ", language  : " + (stream.getLanguage() == null ? "unknown" : stream.getLanguage())
                     + ", timebase  : " + stream.getTimeBase().getNumerator() + "/"
@@ -282,13 +284,11 @@ public class VideoPlayer {
                         + coder.getHeight() + ", Video format    : " + coder.getPixelType()
                         + ", Video frame-rate: " + coder.getFrameRate().getDouble());
         }
-        LOGGER.info("Video duration (ms)    : "
-                + (container.getDuration() == Global.NO_PTS ? "unknown" : "" + container.getDuration() / 1000)
-                + ", Video start time (ms)  : "
+        LOGGER.info("Video duration (ms)    : " + (container.getDuration() == Global.NO_PTS ? "unknown"
+                : "" + container.getDuration() / 1000) + ", Video start time (ms)  : "
                 + (container.getStartTime() == Global.NO_PTS ? "unknown"
-                        : "" + container.getStartTime() / 1000)
-                + ", Video file size (bytes): " + container.getFileSize() + ", Video bit rate         : "
-                + container.getBitRate());
+                        : "" + container.getStartTime() / 1000) + ", Video file size (bytes): "
+                + container.getFileSize() + ", Video bit rate         : " + container.getBitRate());
 
         LOGGER.info("VIDEO CODER INFO: " + ", Video timebase  : " + videoCoder.getTimeBase()
                 + ", Video tolerance : " + videoCoder.getBitRateTolerance() + ", Video channels  : "
@@ -322,8 +322,8 @@ public class VideoPlayer {
                         throw new RuntimeException("could not resample video from: " + videoFilename);
                 }
                 if (newPic.getPixelType() != IPixelFormat.Type.BGR24)
-                    throw new RuntimeException(
-                            "could not decode video as BGR 24 bit data in: " + videoFilename);
+                    throw new RuntimeException("could not decode video as BGR 24 bit data in: "
+                            + videoFilename);
                 currentTimestamp = picture.getTimeStamp();
                 delay();
                 updatePanel(newPic);
@@ -381,7 +381,9 @@ public class VideoPlayer {
             if (millisecondsToSleep > 0)
                 try
                 {
-                    Thread.sleep(millisecondsToSleep / playbackMultiplier);
+                    final long millis = millisecondsToSleep / playbackMultiplier;
+                    System.out.println("sleep: " + millis);
+                    Thread.sleep(millis);
                 } catch (InterruptedException reason)
                 {
                     return;
