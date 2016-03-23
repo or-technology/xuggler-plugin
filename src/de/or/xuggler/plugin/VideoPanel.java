@@ -21,16 +21,16 @@ public class VideoPanel extends JPanel {
     {
         super();
 
-        this.setBackground(Color.BLACK);
-        this.setOpaque(true);
+        setBackground(Color.BLACK);
+        setOpaque(true);
 
         imageComponent = new ImageComponent(this);
 
-        this.setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
         this.add(imageComponent);
-        this.setVisible(true);
+        setVisible(true);
 
-        this.addComponentListener(new java.awt.event.ComponentAdapter() {
+        addComponentListener(new java.awt.event.ComponentAdapter() {
 
             @Override
             public void componentResized(java.awt.event.ComponentEvent evt)
@@ -45,7 +45,7 @@ public class VideoPanel extends JPanel {
         if (currentImage == null)
             return;
         double imgW = currentImage.getWidth(this);
-        double imgH = currentImage.getHeight(this);
+        double imgH = currentImage.getHeight(this) * pixelAspectRatio;
 
         double ratio1 = getWidth() / imgW;
         double ratio2 = getHeight() / imgH;
@@ -67,5 +67,12 @@ public class VideoPanel extends JPanel {
         }
 
         imageComponent.setImage(aImage);
+    }
+
+    double pixelAspectRatio = 1.0d;
+
+    public void setPixelAspectRation(double pixelAspectRatio)
+    {
+        this.pixelAspectRatio = pixelAspectRatio;
     }
 }

@@ -398,8 +398,8 @@ public class XugglerPlayer extends JPanel {
     final Icon playIcon = IconRegistry.getIcon(GnomeMediaPlaybackStartIcon.class.getName(), ICON_SIZE,
             getClass().getClassLoader());
 
-    final Icon audioVolumeHighIcon = IconRegistry.getIcon(GnomeAudioVolumeHighIcon.class.getName(),
-            ICON_SIZE, getClass().getClassLoader());
+    final Icon audioVolumeHighIcon = IconRegistry.getIcon(GnomeAudioVolumeHighIcon.class.getName(), ICON_SIZE,
+            getClass().getClassLoader());
 
     final Icon audioVolumeLowIcon = IconRegistry.getIcon(GnomeAudioVolumeLowIcon.class.getName(), ICON_SIZE,
             getClass().getClassLoader());
@@ -410,8 +410,8 @@ public class XugglerPlayer extends JPanel {
     final Icon audioVolumeMutedIcon = IconRegistry.getIcon(GnomeAudioVolumeMutedIcon.class.getName(),
             ICON_SIZE, getClass().getClassLoader());
 
-    final Icon snapshotIcon = IconRegistry.getIcon(GnomeCameraPhotoIcon.class.getName(), ICON_SIZE,
-            getClass().getClassLoader());
+    final Icon snapshotIcon = IconRegistry.getIcon(GnomeCameraPhotoIcon.class.getName(), ICON_SIZE, getClass()
+            .getClassLoader());
 
     final Icon seekBackwardIcon = IconRegistry.getIcon(GnomeMediaSeekBackwardIcon.class.getName(), ICON_SIZE,
             getClass().getClassLoader());
@@ -422,5 +422,10 @@ public class XugglerPlayer extends JPanel {
     JToggleButton muteButton;
 
     protected JButton playButton;
+
+    public void setPixelAspectRatio(double pixelAspectRatio)
+    {
+        screen.setPixelAspectRation(pixelAspectRatio);
+    }
 
 }
